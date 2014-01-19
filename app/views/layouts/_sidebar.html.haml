@@ -1,0 +1,84 @@
+/ sidebar
+#sidebar-nav
+  %ul#dashboard-menu
+    %li.active
+      / change active statement to dynamic
+      .pointer
+        .arrow
+        .arrow_border
+      %a{href: "index.html"}
+        %i.icon-home
+        %span= t :home
+    %li
+      %a{href: "chart-showcase.html"}
+        %i.icon-signal
+        %span Charts
+    %li
+      %a.dropdown-toggle{href: "#"}
+        %i.icon-group
+        %span Users
+        %i.icon-chevron-down
+      %ul.submenu
+        %li
+          %a{href: "user-list.html"} User list
+        %li
+          %a{href: "new-user.html"} New user form
+        %li
+          %a{href: "user-profile.html"} User profile
+    %li
+      %a.dropdown-toggle{href: "#"}
+        %i.icon-edit
+        %span Forms
+        %i.icon-chevron-down
+      %ul.submenu
+        %li
+          %a{href: "form-showcase.html"} Form showcase
+        %li
+          %a{href: "form-wizard.html"} Form wizard
+    %li
+      %a{href: "gallery.html"}
+        %i.icon-picture
+        %span Gallery
+    %li
+      %a{href: "calendar.html"}
+        %i.icon-calendar-empty
+        %span Calendar
+    %li
+      %a.dropdown-toggle{href: "tables.html"}
+        %i.icon-th-large
+        %span Tables
+        %i.icon-chevron-down
+      %ul.submenu
+        %li
+          %a{href: "tables.html"} Custom tables
+        %li
+          %a{href: "datatables.html"} DataTables
+    %li
+      %a.dropdown-toggle.ui-elements{href: "#"}
+        %i.icon-code-fork
+        %span UI Elements
+        %i.icon-chevron-down
+      %ul.submenu
+        %li
+          %a{href: "ui-elements.html"} UI Elements
+        %li
+          %a{href: "icons.html"} Icons
+    %li
+      %a{href: "personal-info.html"}
+        %i.icon-cog
+        %span My Info
+    %li
+      %a.dropdown-toggle{href: "#"}
+        %i.icon-share-alt
+        %span Extras
+        %i.icon-chevron-down
+      %ul.submenu
+        %li
+          %a{href: "code-editor.html"} Code editor
+        %li
+          %a{href: "grids.html"} Grids
+        %li
+          %a{href: "signin.html"} Sign in
+        %li
+          %a{href: "signup.html"} Sign up
+/ end sidebar
