@@ -1,14 +1,42 @@
 / sidebar
 #sidebar-nav
   %ul#dashboard-menu
-    %li.active
-      / change active statement to dynamic
-      .pointer
-        .arrow
-        .arrow_border
-      %a{href: "index.html"}
+
+    /Главная
+    = content_tag :li, class:"#{active_link(root_path)}" do
+      - if active_link?(root_path)
+        .pointer
+          .arrow
+          .arrow_border
+      = link_to root_path do
         %i.icon-home
         %span= t :home
+
+    /Запись на прием к врачу
+    = content_tag :li, class:"#{active_link(k_vrachu_path)}" do
+      - if active_link?(k_vrachu_path)
+        .pointer
+          .arrow
+          .arrow_border
+      = link_to k_vrachu_path do
+        %i.icon-heart-empty
+        %span= t :k_vrachu
+
+    /Помощь
+    = content_tag :li, class:"#{active_link(help_path)}" do
+      - if active_link?(help_path)
+        .pointer
+          .arrow
+          .arrow_border
+      = link_to help_path do
+        %i.icon-question-sign
+        %span= t :help
+
+
+
+    / links below display for registered users
+
+
     %li
       %a{href: "chart-showcase.html"}
         %i.icon-signal

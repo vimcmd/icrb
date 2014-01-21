@@ -2,3 +2,8 @@ ru:
   hello_world: "Привет!"
   brand: "Ишимбайская ЦРБ"
   home: "Главная"
+  help: "Помощь"
+  k_vrachu: "На прием"
+  k_vrachu_full: "Запись на прием к врачу"
+  signup: "Регистрация"
+  signin: "Вход"

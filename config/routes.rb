@@ -1,6 +1,11 @@
 Icrb::Application.routes.draw do
+  get "users/new"
+
   root              to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'
+  match '/k_vrachu',to: 'static_pages#k_vrachu'
+
+  match '/signup',  to: 'users#new'
 
 
   # The priority is based upon order of creation:
