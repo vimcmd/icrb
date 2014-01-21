@@ -15,6 +15,7 @@ gem "bootstrap-will_paginate", "~> 0.0.10"
 group :development do
   gem 'sqlite3', '1.3.8'
   gem "better_errors", "~> 1.1.0"
+  gem "annotate", "~> 2.6.1"
 end
 
 

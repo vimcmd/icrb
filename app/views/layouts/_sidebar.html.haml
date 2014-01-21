@@ -2,6 +2,12 @@
 #sidebar-nav
   %ul#dashboard-menu
 
+    /Signin or signout
+    = content_tag :li, class:"#{active_link(signup_path)}" do
+      = link_to '#' do
+        %i.icon-signin
+        %span= t :signin
+
     /Главная
     = content_tag :li, class:"#{active_link(root_path)}" do
       - if active_link?(root_path)
@@ -22,6 +28,31 @@
         %i.icon-heart-empty
         %span= t :k_vrachu
 
+    / if signed_in? display links below
+
+    /ПроМед
+    = content_tag :li, class:"#{active_link(promed_path)}" do
+      - if active_link?(promed_path)
+        .pointer
+          .arrow
+          .arrow_border
+      = link_to promed_path do
+        %i.icon-desktop
+        %span= t :promed
+
+    /Неполадка
+    = content_tag :li, class:"#{active_link(problem_path)}" do
+      - if active_link?(problem_path)
+        .pointer
+          .arrow
+          .arrow_border
+      = link_to problem_path do
+        %i.icon-bullhorn
+        %span= t :problem
+
+
+    /Additional links
+
     /Помощь
     = content_tag :li, class:"#{active_link(help_path)}" do
       - if active_link?(help_path)
@@ -32,81 +63,36 @@
         %i.icon-question-sign
         %span= t :help
 
-
-
-    / links below display for registered users
-
-
-    %li
-      %a{href: "chart-showcase.html"}
-        %i.icon-signal
-        %span Charts
-    %li
+    /About
+    = content_tag :li, class:"#{active_link(history_path || contacts_path || licenses_path)}" do
+      - if active_link?(history_path) || active_link?(contacts_path) || active_link?(licenses_path)
+        .pointer
+          .arrow
+          .arrow_border
       %a.dropdown-toggle{href: "#"}
-        %i.icon-group
-        %span Users
+        %i.icon-briefcase
+        %span= t :about
         %i.icon-chevron-down
       %ul.submenu
         %li
-          %a{href: "user-list.html"} User list
+          = link_to(t(:history), history_path, class:"#{active_link(history_path)}")
         %li
-          %a{href: "new-user.html"} New user form
+          = link_to(t(:contacts), contacts_path, class:"#{active_link(contacts_path)}")
         %li
-          %a{href: "user-profile.html"} User profile
-    %li
-      %a.dropdown-toggle{href: "#"}
-        %i.icon-edit
-        %span Forms
-        %i.icon-chevron-down
-      %ul.submenu
-        %li
-          %a{href: "form-showcase.html"} Form showcase
-        %li
-          %a{href: "form-wizard.html"} Form wizard
-    %li
-      %a{href: "gallery.html"}
-        %i.icon-picture
-        %span Gallery
-    %li
-      %a{href: "calendar.html"}
-        %i.icon-calendar-empty
-        %span Calendar
-    %li
-      %a.dropdown-toggle{href: "tables.html"}
-        %i.icon-th-large
-        %span Tables
-        %i.icon-chevron-down
-      %ul.submenu
-        %li
-          %a{href: "tables.html"} Custom tables
-        %li
-          %a{href: "datatables.html"} DataTables
-    %li
-      %a.dropdown-toggle.ui-elements{href: "#"}
-        %i.icon-code-fork
-        %span UI Elements
-        %i.icon-chevron-down
-      %ul.submenu
-        %li
-          %a{href: "ui-elements.html"} UI Elements
-        %li
-          %a{href: "icons.html"} Icons
-    %li
-      %a{href: "personal-info.html"}
-        %i.icon-cog
-        %span My Info
-    %li
-      %a.dropdown-toggle{href: "#"}
-        %i.icon-share-alt
-        %span Extras
-        %i.icon-chevron-down
-      %ul.submenu
-        %li
-          %a{href: "code-editor.html"} Code editor
-        %li
-          %a{href: "grids.html"} Grids
-        %li
-          %a{href: "signin.html"} Sign in
-        %li
-          %a{href: "signup.html"} Sign up
+          = link_to(t(:licenses), licenses_path, class:"#{active_link(licenses_path)}")
+
+    / %li
+    /   %a.dropdown-toggle{href: "#"}
+    /     %i.icon-share-alt
+    /     %span Extras
+    /     %i.icon-chevron-down
+    /   %ul.submenu
+    /     %li
+    /       %a{href: "#"} Code editor
+    /     %li
+    /       %a{href: "#"} Grids
+    /     %li
+    /       %a{href: "#"} Sign in
+    /     %li
+    /       %a{href: "#"} Sign up
 / end sidebar

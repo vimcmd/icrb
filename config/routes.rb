@@ -4,6 +4,12 @@ Icrb::Application.routes.draw do
   root              to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'
   match '/k_vrachu',to: 'static_pages#k_vrachu'
+  match '/promed',  to: 'static_pages#promed'
+  match '/history', to: 'static_pages#history'
+  match '/contacts',to: 'static_pages#contacts'
+  match '/licenses',to: 'static_pages#licenses'
+
+  match '/problem', to: 'static_pages#problem'
 
   match '/signup',  to: 'users#new'
 
