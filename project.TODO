@@ -13,6 +13,7 @@ ICRB Project:
       Visual:
         ☐ Sidebar
         ☐ Navbar
+        ☐ Replace all icons with fa.fa- (font-awesome gem)
         ✔ Iframe's for k_vrachu, ProMed @done (14-01-22 18:16)
         ✔ Content frame @done (14-01-22 18:20)
     --- ✄ -----------------------

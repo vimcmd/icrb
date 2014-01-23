@@ -7,18 +7,21 @@
       %span.icon-bar
       %span.icon-bar
     %a.navbar-brand{href: "/"}
+      %i.fa.fa-ambulance
       = t :brand
       / <img src="assets/img/logo.png" alt="logo">
   %ul.nav.navbar-nav.pull-right.hidden-xs
     %li.settings.hidden-xs.hidden-sm
       = link_to signup_path, "data-role" => "button" do
-        %i.icon-plus-sign
+        %i.fa.fa-plus-circle
           %span= t :signup
 
     %li.settings.hidden-xs.hidden-sm
       = link_to '#', "data-role" => "button" do
-        %i.icon-signin
+        %i.fa.fa-sign-in
           %span= t :signin
+
+    /Default template
 
     / %li.hidden-xs.hidden-sm
     /   %input.search{type: "text"}/

@@ -1,17 +1,32 @@
 ru:
+  # Home
   home: "Главная"
-  help: "Помощь"
+
+  # Admin
+  admin: "Админ"
+  problem_admin: "Проблемы"
+  news: "Новости"
+  users: "Пользователи"
+
+  # K_vrachu
   k_vrachu: "К врачу"
   k_vrachu_full: "Запись на прием к врачу"
   k_vrachu_zapis: "Запись"
   documents: "Документы"
   documents_full: "Необходимые документы"
+
+  #ProMed
   promed: "ПроМед"
   promed_full: "РИАМС ПроМед Уфа"
+
+  # Problem
   problem: "Неполадка"
   problem_full: "Сообщить о неполадке"
+
+  # About
   about: "О нас"
   history: "История"
   contacts: "Контакты"
   licenses: "Лицензии"
+  help: "Помощь"
 
