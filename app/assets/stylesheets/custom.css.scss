@@ -1,16 +1,2 @@
 // @import "bootstrap";
 
-/* Sidebar */
-#sidebar-nav {
-  #dashboard-menu {
-    > li:first-child {
-      position: absolute;
-      margin-top: -80px;
-    }
-
-    > li:first-child > a:first-child{
-      border-bottom: 0px solid #dae1e8;
-      box-shadow: 0 0px 0px 0px #FFFFFF;
-    }
-  }
-}

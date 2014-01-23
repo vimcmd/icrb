@@ -2,50 +2,39 @@
 #sidebar-nav
   %ul#dashboard-menu
 
-    /Signin or signout
-    = content_tag :li, class:"#{active_link(signup_path)}" do
-      = link_to '#' do
-        %i.icon-signin
-        %span= t :signin
-
     /Главная
     = content_tag :li, class:"#{active_link(root_path)}" do
-      - if active_link?(root_path)
-        .pointer
-          .arrow
-          .arrow_border
+      = active_link?(root_path)
+
       = link_to root_path do
         %i.icon-home
         %span= t :home
 
     /Запись на прием к врачу
-    = content_tag :li, class:"#{active_link(k_vrachu_path)}" do
-      - if active_link?(k_vrachu_path)
-        .pointer
-          .arrow
-          .arrow_border
-      = link_to k_vrachu_path do
+    = content_tag :li, class:"" do
+      = active_link?(k_vrachu_path) || active_link?(documents_path)
+      %a.dropdown-toggle{href: "#"}
         %i.icon-heart-empty
         %span= t :k_vrachu
+        %i.icon-chevron-down
+      %ul.submenu
+        %li
+          = link_to(t(:k_vrachu_zapis), k_vrachu_path, class:"#{active_link(k_vrachu_path)}")
+        %li
+          = link_to(t(:documents), documents_path, class:"#{active_link(documents_path)}")
 
     / if signed_in? display links below
 
     /ПроМед
     = content_tag :li, class:"#{active_link(promed_path)}" do
-      - if active_link?(promed_path)
-        .pointer
-          .arrow
-          .arrow_border
+      = active_link?(promed_path)
       = link_to promed_path do
         %i.icon-desktop
         %span= t :promed
 
     /Неполадка
     = content_tag :li, class:"#{active_link(problem_path)}" do
-      - if active_link?(problem_path)
-        .pointer
-          .arrow
-          .arrow_border
+      = active_link?(problem_path)
       = link_to problem_path do
         %i.icon-bullhorn
         %span= t :problem
@@ -55,20 +44,14 @@
 
     /Помощь
     = content_tag :li, class:"#{active_link(help_path)}" do
-      - if active_link?(help_path)
-        .pointer
-          .arrow
-          .arrow_border
+      = active_link?(help_path)
       = link_to help_path do
         %i.icon-question-sign
         %span= t :help
 
     /About
-    = content_tag :li, class:"#{active_link(history_path || contacts_path || licenses_path)}" do
-      - if active_link?(history_path) || active_link?(contacts_path) || active_link?(licenses_path)
-        .pointer
-          .arrow
-          .arrow_border
+    = content_tag :li, class:"" do
+      = active_link?(history_path) || active_link?(contacts_path) || active_link?(licenses_path)
       %a.dropdown-toggle{href: "#"}
         %i.icon-briefcase
         %span= t :about
@@ -81,6 +64,7 @@
         %li
           = link_to(t(:licenses), licenses_path, class:"#{active_link(licenses_path)}")
 
+    /Dropdown sample
     / %li
     /   %a.dropdown-toggle{href: "#"}
     /     %i.icon-share-alt

@@ -14,7 +14,15 @@ module ApplicationHelper
   end
 
   def active_link?(path)
-    current_page?(path)
+    data = '<div class="pointer">
+              <div class="arrow"></div>
+              <div class="arrow_border"></div>
+            </div>'
+    if current_page?(path)
+      data.html_safe
+    else
+      nil
+    end
   end
 
 end

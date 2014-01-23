@@ -1,17 +1,23 @@
 Icrb::Application.routes.draw do
   get "users/new"
 
-  root              to: 'static_pages#home'
-  match '/help',    to: 'static_pages#help'
-  match '/k_vrachu',to: 'static_pages#k_vrachu'
-  match '/promed',  to: 'static_pages#promed'
-  match '/history', to: 'static_pages#history'
-  match '/contacts',to: 'static_pages#contacts'
-  match '/licenses',to: 'static_pages#licenses'
+  root               to: 'static_pages#home'
+  match '/help',     to: 'static_pages#help'
 
-  match '/problem', to: 'static_pages#problem'
+  # K vrachu
+  match '/k_vrachu', to: 'static_pages#k_vrachu'
+  match '/documents',to: 'static_pages#documents'
 
-  match '/signup',  to: 'users#new'
+  match '/promed',   to: 'static_pages#promed'
+
+  # About us
+  match '/history',  to: 'static_pages#history'
+  match '/contacts', to: 'static_pages#contacts'
+  match '/licenses', to: 'static_pages#licenses'
+
+  match '/problem',  to: 'static_pages#problem'
+
+  match '/signup',   to: 'users#new'
 
 
   # The priority is based upon order of creation:

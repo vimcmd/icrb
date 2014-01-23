@@ -1,0 +1,23 @@
+ICRB Project:
+
+      Main functional:
+        ☐ Users
+        ☐ User registration with referal
+        ☐ User problems
+        ☐ Admin (can track all problems)
+        ☐ Filter for problems (by date, by type etc.)
+        ☐ Create news posted by admin on main page for all
+        ☐
+
+      --- ✄ -----------------------
+      Visual:
+        ☐ Sidebar
+        ☐ Navbar
+        ✔ Iframe's for k_vrachu, ProMed @done (14-01-22 18:16)
+        ✔ Content frame @done (14-01-22 18:20)
+    --- ✄ -----------------------
+
+      Static pages:
+        ☐ History
+        ☐ Licenses
+        ☐ Contacts

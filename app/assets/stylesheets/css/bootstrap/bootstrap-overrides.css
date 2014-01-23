@@ -337,4 +337,9 @@ table th span.line{
   }
 }
 
-
+/* IFrame padding-left */
+@media (min-width: 768px) {
+	iframe{
+		padding-left: 50px;
+	}
+}
