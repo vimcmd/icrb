@@ -10,39 +10,37 @@
         %i.icon-home
         %span= t :home
 
-    /if signed_in && admin
-    = content_tag :li, class:"" do
-      = active_link?('#') || active_link?('#')
-      %a.dropdown-toggle{href: "#"}
-        %i.fa.fa-cogs
-        /icon-user-md
-        %span= t :admin
-        %i.icon-chevron-down
-      %ul.submenu
-        %li
-          = link_to(t(:problem_admin), '#', class:"#{active_link('#')}")
-        %li
-          = link_to(t(:users), '#', class:"#{active_link('#')}")
+    - if signed_in?
+      /if signed_in && admin
+      = content_tag :li, class:"" do
+        = active_link?('#') || active_link?('#')
+        %a.dropdown-toggle{href: "#"}
+          %i.fa.fa-cogs
+          /icon-user-md
+          %span= t :admin
+          %i.icon-chevron-down
+        %ul.submenu
+          %li
+            = link_to(t(:problem_admin), '#', class:"#{active_link('#')}")
+          %li
+            = link_to(t(:users), '#', class:"#{active_link('#')}")
 
+      / if signed_in? display links below
 
+      /ПроМед
+      = content_tag :li, class:"#{active_link(promed_path)}" do
+        = active_link?(promed_path)
+        = link_to promed_path do
+          %i.fa.fa-desktop
+          %span= t :promed
 
-    / if signed_in? display links below
-
-
-    /ПроМед
-    = content_tag :li, class:"#{active_link(promed_path)}" do
-      = active_link?(promed_path)
-      = link_to promed_path do
-        %i.fa.fa-desktop
-        %span= t :promed
-
-    /if signed_in && not admin
-    /Неполадка
-    = content_tag :li, class:"#{active_link(problem_path)}" do
-      = active_link?(problem_path)
-      = link_to problem_path do
-        %i.fa.fa-bullhorn
-        %span= t :problem
+      /if signed_in && not admin
+      /Неполадка
+      = content_tag :li, class:"#{active_link(problem_path)}" do
+        = active_link?(problem_path)
+        = link_to problem_path do
+          %i.fa.fa-bullhorn
+          %span= t :problem
 
     /Запись на прием к врачу
     = content_tag :li, class:"" do

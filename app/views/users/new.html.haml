@@ -8,9 +8,10 @@
 
         = form_for(@user) do |f|
           = render 'shared/error_messages'
-          = f.text_field :login,                 :class => 'form-control', :placeholder => t(:login)
+          = f.text_field :login,                     :class => 'form-control', :placeholder => t(:login)
           = f.password_field :password,              :class => 'form-control', :placeholder => t(:password)
           = f.password_field :password_confirmation, :class => 'form-control', :placeholder => t(:password_confirmation)
+          / = f.text_field :login,                     :class => 'form-control', :placeholder => t(:invite_code)
           .action
             = f.submit t(:create), class: "btn btn-glow btn-primary primary signup"
     .already

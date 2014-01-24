@@ -2,9 +2,9 @@ ICRB Project:
 
       Main functional:
         ✔ Sign up @done (14-01-24 12:22)
-        ☐ Sessions
-        ☐ Users
-        ☐ User registration with referal
+        ✔ Sessions @done (14-01-24 17:36)
+        ✔ Users @done (14-01-24 17:36)
+        ☐ User registration with REFERAL
         ☐ User problems
         ☐ Admin (can track all problems)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast

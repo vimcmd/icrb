@@ -2,10 +2,20 @@ ru:
   login: "Логин"
   password: "Пароль"
   password_confirmation: "Подтверждение пароля"
+  invite_code: "Регистрационный код"
   form_contains: "Форма содержит"
   sign_up: "Регистрация"
   sign_in: "Войти"
   create: "Создать"
+  save_changes: "Сохранить"
+  edit_profile: "Редактирование профиля"
+  profile_updated: "Профиль обновлен!"
+
+  # DB
+  filial: "Филиал"
+  cabinet: "Кабинет"
+  phone: "Телефон"
+
 
   # Flash
   success_registration: "Успешная регистрация"
