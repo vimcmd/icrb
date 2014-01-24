@@ -3,7 +3,8 @@ ru:
   password: "Пароль"
   password_confirmation: "Подтверждение пароля"
   form_contains: "Форма содержит"
-  signup: "Регистрация"
+  sign_up: "Регистрация"
+  sign_in: "Войти"
   create: "Создать"
 
   # Flash

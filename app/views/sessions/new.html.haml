@@ -1,0 +1,13 @@
+- provide(:title, t(:sign_in))
+#pad-wrapper
+
+  .login-wrapper
+    .box{style: "margin-top: 50px;"}
+      .content-wrap
+        %h6= t(:sign_in)
+
+        = form_for(:session, url: sessions_path) do |f|
+          = f.text_field :login,        :class => 'form-control', :placeholder => t(:login)
+          = f.password_field :password, :class => 'form-control', :placeholder => t(:password)
+          .action
+            = f.submit t(:sign_in), class: "btn btn-glow btn-primary primary signup"

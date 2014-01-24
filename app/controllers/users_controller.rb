@@ -11,12 +11,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      flash[:success] = t(:success_registration)
+      sign_in user
+      flash.now[:success] = t(:welcome)
       redirect_to @user
     else
       render 'new'
     end
-
   end
 
 end

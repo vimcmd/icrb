@@ -1,10 +1,10 @@
-- provide(:title, t(:signup))
+- provide(:title, t(:sign_up))
 #pad-wrapper
 
   .login-wrapper
     .box{style: "margin-top: 50px;"}
       .content-wrap
-        %h6= t(:signup)
+        %h6= t(:sign_up)
 
         = form_for(@user) do |f|
           = render 'shared/error_messages'
@@ -15,4 +15,4 @@
             = f.submit t(:create), class: "btn btn-glow btn-primary primary signup"
     .already
       %p Already have an account?
-      %a{href: "signin.html"} Sign in
+      %a{href: "#"} Sign in
