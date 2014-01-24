@@ -1,4 +1,18 @@
 - provide(:title, t(:signup))
 #pad-wrapper
-  %h1 Users#new
-  %p Регистрация открыта только для сотрудников (система рефералов?)
+
+  .login-wrapper
+    .box{style: "margin-top: 50px;"}
+      .content-wrap
+        %h6= t(:signup)
+
+        = form_for(@user) do |f|
+          = render 'shared/error_messages'
+          = f.text_field :login,                 :class => 'form-control', :placeholder => t(:login)
+          = f.password_field :password,              :class => 'form-control', :placeholder => t(:password)
+          = f.password_field :password_confirmation, :class => 'form-control', :placeholder => t(:password_confirmation)
+          .action
+            = f.submit t(:create), class: "btn btn-glow btn-primary primary signup"
+    .already
+      %p Already have an account?
+      %a{href: "signin.html"} Sign in

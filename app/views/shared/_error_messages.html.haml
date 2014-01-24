@@ -1,0 +1,10 @@
+- if @user.errors.any?
+  #error_explanation
+    .alert.alert-danger{ style: "word-wrap: break-word" }
+      = t(:form_contains)
+      #{@user.errors.count}
+      #{Russian.pluralize(@user.errors.count, "ошибку", "ошибки", "ошибок")}
+      %ul{ style: "text-align: left" }
+        - @user.errors.full_messages.each do |msg|
+          %li
+            #{msg}

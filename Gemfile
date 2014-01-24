@@ -4,11 +4,13 @@ gem 'rails', '3.2.13'
 
 gem "bootstrap-sass", "~> 3.0.3.0"
 gem "haml", "~> 4.0.4"
-gem "bcrypt-ruby", "~> 3.1.2"
+gem "bcrypt-ruby", "~> 3.0.0"
 gem "faker", "~> 1.2.0"
 gem "will_paginate", "~> 3.0.5"
 gem "bootstrap-will_paginate", "~> 0.0.10"
 gem "font-awesome-rails", "~> 4.0.3.1"
+gem 'rails-i18n', '~> 3.0.0'
+gem 'russian', '~> 0.6.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -21,7 +21,7 @@ body {
 	padding-top: 28px;
 }
 .login-wrapper{
-	position: absolute;
+	// position: absolute;
 	left: 0;
 	right: 0;
 	text-align: center;
@@ -92,7 +92,7 @@ body {
 			letter-spacing: 0px;
 			font-size: 14px;
 		}
-		input::-webkit-input-placeholder{	
+		input::-webkit-input-placeholder{
 			color: rgb(155, 168, 182);
 			font-style: italic;
 			letter-spacing: 0px;

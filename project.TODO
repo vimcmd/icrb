@@ -5,7 +5,7 @@ ICRB Project:
         ☐ User registration with referal
         ☐ User problems
         ☐ Admin (can track all problems)
-        ☐ Filter for problems (by date, by type etc.)
+        ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
         ☐
 

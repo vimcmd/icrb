@@ -1,0 +1,27 @@
+ru:
+  login: "Логин"
+  password: "Пароль"
+  password_confirmation: "Подтверждение пароля"
+  form_contains: "Форма содержит"
+  signup: "Регистрация"
+  create: "Создать"
+
+  # Flash
+  success_registration: "Успешная регистрация"
+
+  activerecord:
+    attributes:
+      user:
+        login: "Логин"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        password_digest: "Пароль"
+    errors:
+      models:
+        user:
+          attributes:
+            login:
+              blank: "не может быть пустым"
+            password:
+              confirmation: "должен совпадать с подтверждением"
+              too_short: "слишком короткий"
