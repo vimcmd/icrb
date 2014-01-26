@@ -24,6 +24,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    # @user.save(validate: false)
+    # @user.assign_attributes(params[:user])
     if @user.update_attributes(params[:user])
       flash[:success] = t(:profile_updated)
       sign_in @user

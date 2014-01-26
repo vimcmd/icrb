@@ -11,8 +11,13 @@
           = f.text_field :login,                     :class => 'form-control', :placeholder => t(:login)
           = f.password_field :password,              :class => 'form-control', :placeholder => t(:password)
           = f.password_field :password_confirmation, :class => 'form-control', :placeholder => t(:password_confirmation)
-          / = f.text_field :login,                     :class => 'form-control', :placeholder => t(:invite_code)
+
+          = f.text_field :reg_code,                  :class => 'form-control', :placeholder => t(:reg_code)
+
+
           .action
+            %p{style: "color: #7d91a8; font-weight: 600;"}
+              = t(:only_for)
             = f.submit t(:create), class: "btn btn-glow btn-primary primary signup"
     .already
       %p Already have an account?

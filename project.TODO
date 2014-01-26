@@ -4,7 +4,9 @@ ICRB Project:
         ✔ Sign up @done (14-01-24 12:22)
         ✔ Sessions @done (14-01-24 17:36)
         ✔ Users @done (14-01-24 17:36)
-        ☐ User registration with REFERAL
+        ✔ Login validaton (without spaces and spec symbols) @done (14-01-26 21:06)
+        ✔ User registration with REFERAL @done (14-01-26 21:06)
+        ☐ Select filial with dropdown
         ☐ User problems
         ☐ Admin (can track all problems)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
@@ -14,10 +16,11 @@ ICRB Project:
       --- ✄ -----------------------
       Visual:
         ☐ Sidebar
-        ☐ Navbar
+        ✔ Navbar @done (14-01-24 18:54)
         ☐ Replace all icons with fa.fa- (font-awesome gem)
         ✔ Iframe's for k_vrachu, ProMed @done (14-01-22 18:16)
         ✔ Content frame @done (14-01-22 18:20)
+        ☐ dropdown style like pop-dialog
     --- ✄ -----------------------
 
       Static pages:

@@ -29,6 +29,30 @@
           %li.devider
           %li
             = link_to "Sign out", signout_path, method: "delete"
+
+
+        .dropdown-menu.pop-dialog
+          .pointer
+            .arrow
+            .arrow_border
+          .body
+            .menu
+              %a.item{href: "#"} Profile
+              %a.item{href: "#"} My tasks
+              %a.item{href: "#"} Deals
+              %a.item{href: "#"} Terms of service
+              %a.item{href: "#"} Privacy policy
+              .footer
+                %a.logout{href: "#"} Log out
+
+
+
+
+
+
+
+
+
     - else
       /Sign in
       %li.settings.hidden-xs.hidden-sm
