@@ -10,7 +10,7 @@
         %i.icon-home
         %span= t :home
 
-    - if signed_in?
+    - if signed_in? && current_user.admin?
       /if signed_in && admin
       = content_tag :li, class:"" do
         = active_link?('#') || active_link?(users_path)
@@ -25,8 +25,8 @@
           %li
             = link_to(t(:users), users_path, class:"#{active_link(users_path)}")
 
+    - if signed_in?
       / if signed_in? display links below
-
       /ПроМед
       = content_tag :li, class:"#{active_link(promed_path)}" do
         = active_link?(promed_path)
