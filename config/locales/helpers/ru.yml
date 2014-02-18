@@ -1,2 +1,7 @@
 ru:
   base_title: "Ишимбайская ЦРБ"
+
+  will_paginate:
+    previous_label: "&#8592; Назад"
+    next_label: "Вперед &#8594;"
+    page_gap: "&hellip;"

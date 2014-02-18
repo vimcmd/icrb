@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :filial_id
       t.string :cabinet
       t.string :phone
-      t.boolean :admin
+      t.boolean :admin, default: false
       t.string :password_digest
       t.string :remember_token
 

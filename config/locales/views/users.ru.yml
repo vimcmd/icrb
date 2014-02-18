@@ -11,6 +11,12 @@ ru:
   save_changes: "Сохранить"
   edit_profile: "Редактирование профиля"
   profile_updated: "Профиль обновлен!"
+  please_signin: "Пожалуйста войдите"
+  all_users: "Все пользователи"
+  user_created_at: "Дата регистрации"
+  user_you_shure: "Вы уверенны?"
+  user_delete: "Удалить пользователя"
+  user_destroyed: "Пользователь безвозвратно удален"
 
   # DB
   filial: "Филиал"

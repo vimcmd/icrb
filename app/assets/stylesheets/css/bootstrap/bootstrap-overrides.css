@@ -181,7 +181,7 @@ textarea::-webkit-input-placeholder {
 
 /* NAVBAR */
 .navbar-inverse {
-	min-height: 48px;
+	min-height: 42px;
 	margin-bottom: 0px;
 	border-radius: 0px;
 	border-bottom: 1px solid #191e23;

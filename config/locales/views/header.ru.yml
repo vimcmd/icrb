@@ -2,3 +2,7 @@ ru:
   brand: "Ишимбайская ЦРБ"
   signup: "Регистрация"
   signin: "Вход"
+  account: "Аккаунт"
+  profile: "Профиль"
+  settings: "Настройки"
+  signout: "Выход"

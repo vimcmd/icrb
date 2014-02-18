@@ -25,9 +25,14 @@ class User < ActiveRecord::Base
 
   VALID_LOGIN_EXP = /\A[a-z\d\-._]+\z/i
 
-  validates :login, presence: true, format: { with: VALID_LOGIN_EXP }, uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 3 }
+  validates :login, presence: true,
+                    format: { with: VALID_LOGIN_EXP },
+                    uniqueness: { case_sensitive: false }
+
+  validates :password, length: { minimum: 5 }
+
   validates :password_confirmation, presence: true
+
   validate  :validate_reg_code, :on => :create
 
 

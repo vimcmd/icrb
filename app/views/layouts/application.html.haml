@@ -34,9 +34,10 @@
     = render 'layouts/header'
     = render 'layouts/sidebar'
     .content
-      = render 'layouts/upper_main_stats'
-      - flash.each do |key, value|
-        %div{class: "alert alert-#{key}"}= value
+      / = render 'layouts/upper_main_stats'
+      .flash-container
+        - flash.each do |key, value|
+          %div{class: "alert alert-#{key}"}= value
       = yield
     .row.stats-row
       = debug(params) if Rails.env.development?

@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= link_to user.login, user, class: "name" %>
+  </td>
+  <td class="description">
+    <%= user.created_at %>
+  </td>
+
+  <td>
+    <% if current_user.admin? && !current_user?(user) %>
+      <%= link_to t( :user_delete ), user, method: :delete, data: { confirm: t( :user_you_shure ) } %>
+    <% end %>
+  </td>
+
+</tr>
+
