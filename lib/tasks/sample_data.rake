@@ -18,7 +18,7 @@ namespace :db do
     admin.toggle!( :admin )
 
     30.times do |n|
-      login  = Faker::Name.first_name
+      login  = Faker::Name.first_name + rand(1..9999).to_s
       password  = "password"
       reg_code = "qwerty"
       User.create!(login: login,
