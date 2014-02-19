@@ -1,0 +1,10 @@
+<h6><%= t( :problem_add_header ) %></h6>
+<p><%= t( :problem_add_subheader ) %></p>
+
+<%= form_for(@problem) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.text_area :content, placeholder: t(:problem_input) %>
+  <%= f.submit t(:problem_send_btn), class: "btn-glow primary" %>
+<% end %>
+
+

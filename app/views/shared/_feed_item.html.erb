@@ -1,0 +1,23 @@
+<tr id="<%= feed_item.id %>">
+  <td>
+    <span class="name"><%= feed_item.content %></span>
+    <span class="comment"><%= t( :problem_comment ) %></span>
+    <span class="comment"><%= feed_item.admin_comment %></span>
+  </td>
+  <td>
+    <%= feed_item.status_id %>
+  </td>
+  <td>
+    <%= time_ago_in_words(feed_item.created_at) %> <%= t(:problem_ago) %>
+  </td>
+  <td>
+    <span class="name"><%= feed_item.user.login %></span>
+    <span>
+      <% if current_user?(feed_item.user) %>
+        <%= link_to "delete", feed_item, method: :delete,
+                                       data: { confirm: t(:user_you_shure),
+                                       title: feed_item.content } %>
+      <% end %>
+    </span>
+  </td>
+</tr>

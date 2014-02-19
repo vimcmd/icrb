@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   attr_accessible :login, :password, :password_confirmation, :reg_code
   attr_accessor :reg_code
 
+  has_many :problems, dependent: :destroy
+
   has_secure_password
 
   before_save { login.downcase! }
@@ -36,6 +38,13 @@ class User < ActiveRecord::Base
   validate  :validate_reg_code, :on => :create
 
 
+
+  def feed
+    # temporal
+    Problem.where("user_id = ?", id)
+  end
+
+
   private
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
@@ -49,19 +58,6 @@ class User < ActiveRecord::Base
     rescue ArgumentError
       errors.add :reg_code, "out of range"
     end
-
-    # ------------
-    #   invites_list = "SELECT * FROM invites WHERE reg_code = :reg_code"
-    #   where("code IN (#{invites_list})  = :reg_code", reg_code: invite.code)
-    # end
-    #
-    # def check_reg_code
-    #  if !reg_code.nil?
-    #    self.remember_token = SecureRandom.urlsafe_base64(20)
-    #  else
-    #    flash.now[:danger] = t(:wrong_reg_code)
-    #    render 'new'
-    # end
 
 
 end

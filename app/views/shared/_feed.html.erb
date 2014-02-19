@@ -1,0 +1,23 @@
+<% if @feed_items.try(:any?) %>
+  <h3> <%= t( :problem_my_list ) %> (<%= @feed_items.count %>) </h3>
+
+  <table class="table table-hover">
+  <!-- thead -->
+    <thead>
+      <tr>
+        <th><%= t( :problem_content ) %></th>
+        <th><%= t( :problem_status ) %></th>
+        <th><%= t( :problem_date ) %></th>
+        <th><%= t( :problem_sender ) %></th>
+      </tr>
+    </thead>
+
+    <!-- tbody -->
+    <tbody>
+      <%= render partial: 'shared/feed_item', collection: @feed_items %>
+    </tbody>
+
+  </table>
+
+  <%= will_paginate @feed_items %>
+<% end %>

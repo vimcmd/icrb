@@ -1,0 +1,29 @@
+<% provide(:title, t(:problem_full)) %>
+<div id="pad-wrapper">
+
+  <% if signed_in? && current_user %>
+
+    <div class="row">
+      <div class="col-md-5" style="top: -30px;">
+        <%= render 'shared/user_info' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 problem-add">
+        <%= render 'shared/problem_form' %>
+      </div>
+
+      <div class="col-md-7">
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+
+
+
+  <% else %>
+
+  <!-- link_to sign_in -->
+
+  <% end %>
+</div>

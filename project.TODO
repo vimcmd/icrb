@@ -14,12 +14,13 @@ ICRB Project:
         ☐ Admin (can track all problems)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
-        ☐ After registration redirect_to edit profile with info
+        ✔ After registration redirect_to edit profile with info @done (14-02-19 15:38)
+        ☐ After delete problem redirect back to page, not root
 
       --- ✄ -----------------------
       Visual:
-        ☐ Sidebar
-        ☐ flash message width container
+        ☐ Sidebar toggler
+        ✔ flash message width container @done (14-02-18 20:40)
         ✔ Navbar @done (14-01-24 18:54)
         ☐ Replace all icons with fa.fa- (font-awesome gem)
         ✔ Iframe's for k_vrachu, ProMed @done (14-01-22 18:16)
@@ -29,7 +30,7 @@ ICRB Project:
     --- ✄ -----------------------
 
       I18n:
-       ☐ profile dropdown
+       ✔ profile dropdown @done (14-02-18 20:39)
        ☐
     --- ✄ -----------------------
 
