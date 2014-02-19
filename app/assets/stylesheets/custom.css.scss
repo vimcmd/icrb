@@ -12,11 +12,15 @@
   }
 
   p {
-    color: #777e86;
+    // color: #777e86;
+    color: #526273;
     margin: 0 0 10px;
-    display: block;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
+    display: inline;
+    position: relative;
+    top: 5px;
+    left: 7px;
 
   }
 
@@ -27,6 +31,7 @@
     background: #fff;
     border-color: #dee3ea;
     font-size: 13px;
+    padding: 5px 7px 5px 7px;
   }
   .btn-glow.primary {
     margin-top: 15px;
@@ -89,4 +94,16 @@
     margin-top: 20px;
     margin-bottom: 5px
   }
+}
+
+// COUNTDOWN
+
+.countdown {
+  // display: inline;
+  width: 95px;
+  color: #526273;
+  background-color: #DEE3EA;
+  padding: 2px 7px 0px 7px;
+  border-radius: 4px 4px 0 0;
+  text-align: left;
 }
