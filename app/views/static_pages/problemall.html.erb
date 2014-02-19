@@ -1,0 +1,58 @@
+<% if current_user.admin? %>
+<% provide(:title, t(:problem_all)) %>
+<div id="pad-wrapper">
+  <div class="table-wrapper">
+
+    <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
+      <h3><%= t(:problem_all) %></h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+        <!-- thead -->
+          <thead>
+            <tr>
+              <th><%= t(:problem_label_content) %></th>
+              <th><%= t(:problem_label_status) %></th>
+              <th><%= t(:problem_label_sender) %></th>
+
+            </tr>
+          </thead>
+
+          <!-- tbody -->
+          <tbody>
+
+            <% @problem.each do |problem| %>
+
+              <tr id="<%= problem.id %>">
+                <td>
+                  <span class="name"><%= problem.content %></span>
+                  <span class="comment"><%= t( :problem_comment ) %><%= problem.admin_comment %></span>
+                  <span class="comment" style="text-align: right;"><%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %> | <%= l((problem.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
+                </td>
+                <td>
+                  <%= problem.status_id %>
+                </td>
+                <td>
+                  <span class="name"><%= problem.user.login %></span>
+                  <span>
+                    <% if current_user?(problem.user) %>
+                      <%= link_to "delete", problem, method: :delete,
+                                                       data: { confirm: t(:user_you_shure),
+                                                       title: problem.content } %>
+                    <% end %>
+                  </span>
+                </td>
+              </tr>
+            <% end %>
+
+          </tbody>
+
+        </table>
+        <%= will_paginate @problem %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

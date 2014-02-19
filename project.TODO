@@ -8,21 +8,24 @@ ICRB Project:
         ✔ User registration with REFERAL @done (14-01-26 21:06)
         ☐ Select filial with dropdown (railscasts pro 88)
         ☐ Announcements (railscasts pro 103)
-        ☐ User problems
+        ✔ User problems @done (14-02-19 19:49)
         ☐ Admin note for problems
-        ☐ Admin access (railscasts 20, 21, 270)
+        ✔ Admin access (railscasts 20, 21, 270) @done (14-02-19 19:49)
         ☐ Admin (can track all problems)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
         ✔ After registration redirect_to edit profile with info @done (14-02-19 15:38)
         ☐ After delete problem redirect back to page, not root
+        ☐ User can see only self problems (restrict url /users/...)
 
       --- ✄ -----------------------
       Visual:
         ☐ Sidebar toggler
+        ☐ Message symbols countdown
+        ☐ Display exact date on hover approx time
         ✔ flash message width container @done (14-02-18 20:40)
         ✔ Navbar @done (14-01-24 18:54)
-        ☐ Replace all icons with fa.fa- (font-awesome gem)
+        ✔ Replace all icons with fa.fa- (font-awesome gem) @done (14-02-19 19:50)
         ✔ Iframe's for k_vrachu, ProMed @done (14-01-22 18:16)
         ✔ Content frame @done (14-01-22 18:20)
         ☐ dropdown style like pop-dialog

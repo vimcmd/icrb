@@ -8,7 +8,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate( page: params[:page], per_page: 10, )
+    if current_user.admin?
+      @users = User.paginate( page: params[:page], per_page: 10, )
+    else
+      flash[:warning] = t( :user_restricted )
+      redirect_to signin_path
+    end
   end
 
   def show

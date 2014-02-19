@@ -13,7 +13,7 @@
     - if signed_in? && current_user.admin?
       /if signed_in && admin
       = content_tag :li, class:"" do
-        = active_link?('#') || active_link?(users_path)
+        = active_link?(users_path) || active_link?(problemall_path)
         %a.dropdown-toggle{href: "#"}
           %i.fa.fa-cogs
           /icon-user-md
@@ -21,7 +21,7 @@
           %i.icon-chevron-down
         %ul.submenu
           %li
-            = link_to(t(:problem_admin), '#', class:"#{active_link('#')}")
+            = link_to(t(:problem_admin), problemall_path, class:"#{active_link(problemall_path)}")
           %li
             = link_to(t(:users), users_path, class:"#{active_link(users_path)}")
 

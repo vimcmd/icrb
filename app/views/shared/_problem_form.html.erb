@@ -4,7 +4,7 @@
 
 <%= form_for(@problem) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="countdown"></div>
+  <!-- <div class="countdown"></div> -->
   <%= f.text_area :content, placeholder: t(:problem_input) %>
   <%= f.submit t(:problem_send_btn), class: "btn-glow primary" %>
 <% end %>

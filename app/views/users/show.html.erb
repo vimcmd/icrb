@@ -1,8 +1,12 @@
-<% provide(:title, @user.login) %>
 
 <div id="pad-wrapper">
 
-<%= render 'problems/problemlist' %>
+  <% provide(:title, @user.login) %>
+  <%= render 'problems/problemlist' %>
+
+<% if current_user.admin? %>
+<% else %>
+<% end %>
 
 
 </div>
