@@ -23,6 +23,7 @@ ICRB Project:
         ☐ Sidebar toggler
         ☐ Message symbols countdown
         ☐ Display exact date on hover approx time
+        ☐ Same look tables
         ✔ flash message width container @done (14-02-18 20:40)
         ✔ Navbar @done (14-01-24 18:54)
         ✔ Replace all icons with fa.fa- (font-awesome gem) @done (14-02-19 19:50)

@@ -17,12 +17,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    if signed_in?
-      @user = User.find(params[:id])
-      @problems = @user.problems.paginate( page: params[:page], per_page: 10, )
-    else
-      flash[:warning] = t( :please_signin )
-      redirect_to signin_path
+    begin
+      if signed_in?
+        @user = User.find(params[:id])
+        @problems = @user.problems.paginate( page: params[:page], per_page: 10, )
+      else
+        flash[:warning] = t( :please_signin )
+        redirect_to signin_path
+      end
+    rescue
+      redirect_to root_path
     end
   end
 
