@@ -10,8 +10,11 @@ ICRB Project:
         ☐ Announcements (railscasts pro 103)
         ✔ User problems @done (14-02-19 19:49)
         ☐ Admin note for problems
+        ☐ Admin add regcode to db
+        ☐ Admin add news to main page
+        ☐ Admin online (icon)
         ✔ Admin access (railscasts 20, 21, 270) @done (14-02-19 19:49)
-        ☐ Admin (can track all problems)
+        ✔ Admin (can track all problems) @done (14-02-21 14:31)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
         ✔ After registration redirect_to edit profile with info @done (14-02-19 15:38)
@@ -21,15 +24,16 @@ ICRB Project:
       --- ✄ -----------------------
       Visual:
         ☐ Sidebar toggler
-        ☐ Message symbols countdown
-        ☐ Display exact date on hover approx time
+        ☐ Message symbols countdown (exclude asset from dev?)
         ☐ Same look tables
+        ☐ Problem link RED color
         ✔ flash message width container @done (14-02-18 20:40)
         ✔ Navbar @done (14-01-24 18:54)
         ✔ Replace all icons with fa.fa- (font-awesome gem) @done (14-02-19 19:50)
         ✔ Iframe's for k_vrachu, ProMed @done (14-01-22 18:16)
         ✔ Content frame @done (14-01-22 18:20)
         ☐ dropdown style like pop-dialog
+        ☐ Display exact date on hover approx time
         ☐ flash. helper for add fa.icons
     --- ✄ -----------------------
 

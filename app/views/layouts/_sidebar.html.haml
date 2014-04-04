@@ -7,7 +7,7 @@
       = active_link?(root_path)
 
       = link_to root_path do
-        %i.icon-home
+        %i.fa.fa-home
         %span= t :home
 
     - if signed_in? && current_user.admin?
