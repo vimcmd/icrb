@@ -18,10 +18,13 @@ ICRB Project:
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
         ✔ After registration redirect_to edit profile with info @done (14-02-19 15:38)
-        ☐ After delete problem redirect back to page, not root
-        ☐ User can see only self problems (restrict url /users/...)
 
+      Changes /bugs:
+        ☐ User can see only self problems (restrict url /users/id)
+        ☐ After delete problem redirect back to page, not root
+        ☐
       --- ✄ -----------------------
+
       Visual:
         ☐ Sidebar toggler
         ☐ Message symbols countdown (exclude asset from dev?)
