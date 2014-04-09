@@ -28,14 +28,32 @@
               <tr id="<%= problem.id %>">
                 <td>
                   <span class="name"><%= problem.content %></span>
-                  <span class="comment"><%= t( :problem_comment ) %><%= problem.admin_comment %></span>
+
+                    <% if current_user.admin? %>
+                      <span class="comment"><%= t( :problem_comment ) %>
+                      <%= render 'shared/problem_comment' %>
+                    <% else %>
+                      <span class="comment"><%= t( :problem_comment ) %><%= problem.admin_comment %></span>
+                    <% end %>
+
                   <span class="comment" style="text-align: right;"><%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %> | <%= l((problem.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
                 </td>
                 <td>
-                  <%= problem.status_id %>
+                  <% if problem.status_id == 0 %>
+                    <span class="label label-info"><%= t(:problem_new) %></span>
+                  <% elsif problem.status_id == 1 %>
+                    <span class="label label-success"><%= t(:problem_completed) %></span>
+                  <% elsif problem.status_id == 2 %>
+                    <span class="label label-danger"><%= t(:problem_aborted) %></span>
+                  <% end %>
                 </td>
                 <td>
                   <span class="name"><%= problem.user.login %></span>
+                    <% if !problem.user.filial.nil? %>
+                      <span style="display:block"><%= problem.user.filial.name %> каб. <%= problem.user.cabinet %></span>
+                      <span style="display:block"><%= problem.user.filial.address %></span>
+                      <span style="display:block"><%= problem.user.phone %></span>
+                    <% end %>
                   <span>
                     <% if current_user?(problem.user) %>
                       <%= link_to "delete", problem, method: :delete,

@@ -1,7 +1,28 @@
 
 <div id="pad-wrapper">
 
-  <% provide(:title, @user.login) %>
+<div class="col-md-5 problem-add">
+  <div class="row user-profile">
+    <a href="<%= user_path(@user) %>"></a>
+      <div class="col-md-6">
+        <h2 class="name">
+          <%= link_to @user.login, @user %>
+        </h2>
+        <h4>
+          <i class="fa fa-phone"></i>
+          <%= @user.phone %>
+        </h4>
+      </div>
+      <div class="col-md-6 address">
+        <ul>
+          <li><i class="fa fa-home"></i><%= @user.filial.name %>, каб. <%= @user.cabinet %></li>
+          <li><i class="fa fa-compass"></i><%= @user.filial.address %></li>
+          <li><i class="fa fa-phone"></i><%= @user.filial.phone %></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
   <%= render 'problems/problemlist' %>
 
 <% if current_user.admin? %>

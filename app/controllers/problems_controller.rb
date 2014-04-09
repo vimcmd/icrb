@@ -1,6 +1,7 @@
 class ProblemsController < ApplicationController
   before_filter :signed_in_user
   before_filter :correct_user, only: :destroy
+  #before_filter :check_profile
 
   def create
     @problem = current_user.problems.build(params[:problem])

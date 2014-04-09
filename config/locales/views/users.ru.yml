@@ -34,6 +34,17 @@ ru:
   problem_ago: "назад"
   problem_sender: "Отправитель"
 
+  #Problems
+  problem_new: "Заявка"
+  problem_completed: "Выполнено"
+  problem_aborted: "Отказано"
+
+  #Profile
+  filial_select: "Ваш филиал:"
+  cabinet_select: "Ваш кабинет:"
+
+  profile_view: "мой профиль"
+
   # Table labels
   problem_label_content: "Содержание"
   problem_label_status: "Статус"

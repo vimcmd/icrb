@@ -15,10 +15,11 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :login, :password, :password_confirmation, :reg_code
+  attr_accessible :login, :password, :password_confirmation, :reg_code, :filial_id, :cabinet, :phone
   attr_accessor :reg_code
 
   has_many :problems, dependent: :destroy
+  belongs_to :filial
 
   has_secure_password
 

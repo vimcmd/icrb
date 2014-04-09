@@ -36,9 +36,9 @@
 			width: 50%;
 		}
 
-		&.active:before, 
-		&.complete:before, 
-		&.active .step, 
+		&.active:before,
+		&.complete:before,
+		&.active .step,
 		&.complete .step {
 			border-color: rgb(203, 222, 238);
 			color: #34a0ed;
@@ -61,7 +61,7 @@
 			display: inline;
 		}
 
-		&.complete .title, 
+		&.complete .title,
 		&.active .title {
 			color: #2b3d53;
 		}
@@ -98,7 +98,7 @@
 
 
 /* step forms */
-.form-wrapper {	
+.form-wrapper {
 	.field-box {
 		margin-bottom: 25px;
 		margin-left: 0;
@@ -121,7 +121,8 @@
 		top: 2px;
 	}
 	input[type="text"] {
-		width: 400px;
+		// width: 400px;
+		width: 100%;
 	}
 	&.payment-info label {
 		width: 150px;
@@ -188,7 +189,7 @@
 @media (max-width: 600px) {
 	.wizard-steps {
 		left: 0px;
-	}	
+	}
 	.form-wrapper input[type="text"] {
 		width: 200px;
 	}
