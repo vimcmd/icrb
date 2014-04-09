@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     begin
+      # add && current_user?
       if signed_in?
         @user = User.find(params[:id])
         @problems = @user.problems.paginate( page: params[:page], per_page: 10, )
