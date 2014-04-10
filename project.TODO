@@ -14,11 +14,13 @@ ICRB Project:
         ☐ Admin online (icon)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
+        ☐ fill profile before send problem
 
-      Changes /bugs:
+      Changes / bugs / refactor:
         ☐ User can see only self problems (restrict url /users/id)
         ☐ layout for user_info in problemadd.html.erb and show.html.erb
         ☐ layout for status_id
+        ☐ add few problem statuses
       --- ✄ -----------------------
 
       Visual:

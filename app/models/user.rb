@@ -53,6 +53,9 @@ class User < ActiveRecord::Base
 
   protected
     def validate_reg_code
+      # if Invite.exists? code: @regcode
+      # errors.add ...
+      # end
       if Invite.where("code = ?", @reg_code).empty?
         errors.add(:reg_code, I18n.t("activerecord.errors.models.user.attributes.reg_code.invalid"))
       end
