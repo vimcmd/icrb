@@ -27,7 +27,7 @@
             <span class="comment"><%= problem.admin_comment %></span>
           </td>
           <td>
-            <%= problem.status_id %>
+            <%= render 'shared/problem_status', object: problem %>
           </td>
           <td>
             <%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %>

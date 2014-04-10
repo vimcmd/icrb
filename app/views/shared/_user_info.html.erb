@@ -1,19 +1,30 @@
-  <div class="row user-profile">
-    <a href="<%= user_path(current_user) %>"></a>
-      <div class="col-md-6">
-        <h2 class="name">
-          <%= link_to current_user.login, current_user %>
-        </h2>
-        <h4>
-          <i class="fa fa-phone"></i>
-          <%= current_user.phone %>
-        </h4>
-      </div>
-      <div class="col-md-6 address">
-        <ul>
-          <li><i class="fa fa-home"></i><%= current_user.filial.name %>, каб. <%= current_user.cabinet %></li>
-          <li><i class="fa fa-compass"></i><%= current_user.filial.address %></li>
-          <li><i class="fa fa-phone"></i><%= current_user.filial.phone %></li>
-        </ul>
-      </div>
+<!-- <div id="main-stats">
+  <div class="row stats-row">
+    <div class="col-md-4 col-sm-4 stat"></div>
+    <div class="col-md-4 col-sm-4 stat"></div>
+    <div class="col-md-4 col-sm-4 stat"></div>
   </div>
+</div> -->
+<div class="row">
+  <div class="col-md-12" style="top: -30px;">
+    <div class="row user-profile">
+      <a href="<%= user_path(object) %>"></a>
+        <div class="col-md-2 b-right">
+          <h2 class="name">
+            <%= link_to object.login, object %>
+          </h2>
+          <h4>
+            <i class="fa fa-phone"></i>
+            <%= object.phone %>
+          </h4>
+        </div>
+        <div class="col-md-6 address">
+          <ul>
+            <li><i class="fa fa-home"></i><%= object.filial.name %>, <strong>каб. <%= object.cabinet %></strong></li>
+            <li><i class="fa fa-compass"></i><%= object.filial.address %></li>
+            <li><i class="fa fa-phone"></i><%= object.filial.phone %></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>

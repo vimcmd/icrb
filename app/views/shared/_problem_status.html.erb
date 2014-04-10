@@ -1,0 +1,7 @@
+<% if object.status_id == 0 %>
+  <span class="label label-info"><%= t(:problem_new) %></span>
+<% elsif object.status_id == 1 %>
+  <span class="label label-success"><%= t(:problem_completed) %></span>
+<% elsif object.status_id == 2 %>
+  <span class="label label-danger"><%= t(:problem_aborted) %></span>
+<% end %>

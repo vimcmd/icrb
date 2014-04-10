@@ -39,13 +39,9 @@
                   <span class="comment" style="text-align: right;"><%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %> | <%= l((problem.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
                 </td>
                 <td>
-                  <% if problem.status_id == 0 %>
-                    <span class="label label-info"><%= t(:problem_new) %></span>
-                  <% elsif problem.status_id == 1 %>
-                    <span class="label label-success"><%= t(:problem_completed) %></span>
-                  <% elsif problem.status_id == 2 %>
-                    <span class="label label-danger"><%= t(:problem_aborted) %></span>
-                  <% end %>
+                  <%= render 'shared/problem_status', object: problem %>
+
+
                 </td>
                 <td>
                   <span class="name"><%= problem.user.login %></span>

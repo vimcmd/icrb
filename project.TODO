@@ -15,11 +15,10 @@ ICRB Project:
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ Create news posted by admin on main page for all
         ☐ fill profile before send problem
+        ☐ Problem count in sidebar
 
       Changes / bugs / refactor:
         ☐ User can see only self problems (restrict url /users/id)
-        ☐ layout for user_info in problemadd.html.erb and show.html.erb
-        ☐ layout for status_id
         ☐ add few problem statuses
       --- ✄ -----------------------
 
@@ -50,6 +49,8 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ layout for user_info in problemadd.html.erb and show.html.erb @done (14-04-10 16:46) @project(ICRB Project / 1st priority)
+ ✔ layout for status_id @done (14-04-10 16:38) @project(ICRB Project / 1st priority)
  ✔ Select filial with dropdown (railscasts pro 88) @done (14-04-09 17:44) @project(ICRB Project / 1st priority)
  ✔ Admin (can track all problems) @done (14-02-21 14:31) @project(ICRB Project / Main functional)
  ✔ Replace all icons with fa.fa- (font-awesome gem) @done (14-02-19 19:50) @project(ICRB Project / Visual)

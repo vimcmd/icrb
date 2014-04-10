@@ -21,6 +21,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /* alerts */
+.alert [class^="fa-"],
+.alert [class*="fa-"],
 .alert [class^="icon-"],
 .alert [class*=" icon-"] {
 	font-size: 27px;
@@ -31,14 +33,20 @@ h1,h2,h3,h4,h5,h6{
 	display: inline-block;
 	color: #f1c359;
 }
+.alert-success [class^="fa-"],
+.alert-success [class*="fa-"],
 .alert-success [class^="icon-"],
 .alert-success [class*=" icon-"] {
 	color: #81ad53;
 }
+.alert-info [class^="fa-"],
+.alert-info [class*="fa-"],
 .alert-info [class^="icon-"],
 .alert-info [class*=" icon-"] {
 	color: #4993c6;
 }
+.alert-danger [class^="fa-"],
+.alert-danger [class*="fa-"],
 .alert-danger [class^="icon-"],
 .alert-danger [class*=" icon-"] {
 	color: #d5393e;
