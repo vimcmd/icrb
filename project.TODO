@@ -8,16 +8,16 @@ ICRB Project:
         --- ✄ -----------------------
 
       Main functional:
-        ☐ Announcements (railscasts pro 103)
         ☐ Admin add regcode to db
-        ☐ Admin add news to main page
         ☐ Admin online (icon)
         ☐ Filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
-        ☐ Create news posted by admin on main page for all
         ☐ fill profile before send problem
         ☐ Problem count in sidebar
 
       Changes / bugs / refactor:
+        ☐ Create news posted by admin on main page for all
+        ☐ Admin add news to main page
+        ☐ Announcements (railscasts pro 103)
         ☐ User can see only self problems (restrict url /users/id)
         ☐ add few problem statuses
       --- ✄ -----------------------
@@ -42,13 +42,13 @@ ICRB Project:
     --- ✄ -----------------------
 
       Static pages:
-        ☐ History
         ☐ Licenses
-        ☐ Contacts
 
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Contacts @done (14-04-10 18:44) @project(ICRB Project / Static pages)
+ ✔ History @done (14-04-10 18:43) @project(ICRB Project / Static pages)
  ✔ layout for user_info in problemadd.html.erb and show.html.erb @done (14-04-10 16:46) @project(ICRB Project / 1st priority)
  ✔ layout for status_id @done (14-04-10 16:38) @project(ICRB Project / 1st priority)
  ✔ Select filial with dropdown (railscasts pro 88) @done (14-04-09 17:44) @project(ICRB Project / 1st priority)

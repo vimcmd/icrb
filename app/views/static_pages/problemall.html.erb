@@ -9,6 +9,19 @@
 
     <div class="row">
       <div class="col-md-12">
+
+      <!-- search elements DUMMY -->
+      <div class="row filter-block">
+        <div class="pull-right">
+                  <div class="btn-group pull-right">
+                      <button class="glow left large">All</button>
+                      <button class="glow middle large">Pending</button>
+                      <button class="glow right large">Completed</button>
+                  </div>
+                <input type="text" class="search order-search" placeholder="Search for an order..">
+        </div>
+      </div>
+
         <table class="table table-hover">
         <!-- thead -->
           <thead>
@@ -29,8 +42,8 @@
                 <td>
                   <span class="name"><%= problem.content %></span>
 
+                    <!-- admin controls -->
                     <% if current_user.admin? %>
-                      <span class="comment"><%= t( :problem_comment ) %>
                       <%= render 'shared/problem_comment' %>
                     <% else %>
                       <span class="comment"><%= t( :problem_comment ) %><%= problem.admin_comment %></span>
@@ -52,9 +65,12 @@
                     <% end %>
                   <span>
                     <% if current_user?(problem.user) %>
-                      <%= link_to "delete", problem, method: :delete,
+                      <%= link_to problem, method: :delete,
                                                        data: { confirm: t(:user_you_shure),
-                                                       title: problem.content } %>
+                                                       title: problem.content },
+                                                       class: "btn-flat icon delete-user" do %>
+                        <i class="icon-trash"></i>
+                      <% end %>
                     <% end %>
                   </span>
                 </td>

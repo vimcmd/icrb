@@ -33,9 +33,12 @@
             <%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %>
             <span>
               <% if current_user?(problem.user) %>
-                <%= link_to "delete", problem, method: :delete,
-                                               data: { confirm: t(:user_you_shure),
-                                               title: problem.content } %>
+                <%= link_to problem, method: :delete,
+                                     data: { confirm: t(:user_you_shure),
+                                     title: problem.content },
+                                     class: "btn-flat icon delete-user" do %>
+                  <i class="icon-trash"></i>
+                <% end %>
               <% end %>
             </span>
           </td>
