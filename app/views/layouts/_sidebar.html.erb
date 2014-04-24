@@ -1,0 +1,161 @@
+<!-- sidebar
+-->
+<div id="sidebar-nav">
+  <ul id="dashboard-menu">
+    <!--Главная
+    -->
+    <%= content_tag :li, class:"#{active_link(root_path)}" do %>
+      <%= active_link?(root_path) %>
+      <%= link_to root_path do %>
+        <i class="fa fa-home"></i>
+        <span>
+          <%= t :home %>
+        </span>
+      <% end %>
+    <% end %>
+    <% if signed_in? && current_user.admin? %>
+      <!--if signed_in && admin
+      -->
+      <%= content_tag :li, class:"" do %>
+        <%= active_link?(users_path) || active_link?(problemall_path) %>
+        <a class="dropdown-toggle" href="#">
+          <i class="fa fa-cogs"></i>
+          <!--icon-user-md
+          -->
+          <span>
+            <%= t :admin %>
+          </span>
+          <!--DUMMY
+          -->
+          <span class="count">5</span>
+          <i class="icon-chevron-down"></i>
+        </a>
+        <ul class="submenu">
+          <li>
+            <%= link_to(t(:problem_admin), problemall_path, class:"#{active_link(problemall_path)}") %>
+          </li>
+          <li>
+            <%= link_to(t(:users), users_path, class:"#{active_link(users_path)}") %>
+          </li>
+
+          <li>
+            <a href="#">Статистика</a>
+          </li>
+          <li>
+            <a href="#">Рег.коды</a>
+          </li>
+        </ul>
+      <% end %>
+    <% end %>
+    <% if signed_in? %>
+      <!-- if signed_in? display links below
+      -->
+      <!--ПроМед
+      -->
+      <%= content_tag :li, class:"#{active_link(promed_path)}" do %>
+        <%= active_link?(promed_path) %>
+        <%= link_to promed_path do %>
+          <i class="fa fa-desktop"></i>
+          <span>
+            <%= t :promed %>
+          </span>
+        <% end %>
+      <% end %>
+      <!--if signed_in && not admin
+      -->
+      <!--Неполадка
+      -->
+      <%= content_tag :li, class:"#{active_link(problemadd_path)}" do %>
+        <%= active_link?(problemadd_path) %>
+        <%= link_to problemadd_path do %>
+          <i class="fa fa-bullhorn"></i>
+          <span>
+            <%= t :problem %>
+          </span>
+        <% end %>
+      <% end %>
+    <% end %>
+    <!--Запись на прием к врачу
+    -->
+    <%= content_tag :li, class:"" do %>
+      <%= active_link?(k_vrachu_path) || active_link?(documents_path) %>
+      <a class="dropdown-toggle" href="#">
+        <i class="fa fa-stethoscope"></i>
+        <!--icon-user-md
+        -->
+        <span>
+          <%= t :k_vrachu %>
+        </span>
+        <i class="icon-chevron-down"></i>
+      </a>
+      <ul class="submenu">
+        <li>
+          <%= link_to(t(:k_vrachu_zapis), k_vrachu_path, class:"#{active_link(k_vrachu_path)}") %>
+        </li>
+        <li>
+          <%= link_to(t(:documents), documents_path, class:"#{active_link(documents_path)}") %>
+        </li>
+      </ul>
+    <% end %>
+    <!--Additional links
+    -->
+    <!--About
+    -->
+    <%= content_tag :li, class:"" do %>
+      <%= active_link?(history_path) || active_link?(contacts_path) || active_link?(licenses_path) || active_link?(help_path) %>
+      <a class="dropdown-toggle" href="#">
+        <i class="fa fa-info-circle"></i>
+        <span>
+          <%= t :about %>
+        </span>
+        <i class="icon-chevron-down"></i>
+      </a>
+      <ul class="submenu">
+        <li>
+          <%= link_to(t(:history), history_path, class:"#{active_link(history_path)}") %>
+        </li>
+        <li>
+          <%= link_to(t(:contacts), contacts_path, class:"#{active_link(contacts_path)}") %>
+        </li>
+        <li>
+          <%= link_to(t(:licenses), licenses_path, class:"#{active_link(licenses_path)}") %>
+        </li>
+        <li>
+          <%= link_to(t(:help), help_path, class:"#{active_link(help_path)}") %>
+        </li>
+      </ul>
+    <% end %>
+    <!--Dropdown sample
+    -->
+    <!-- %li
+    -->
+    <!--   %a.dropdown-toggle{href: "#"}
+    -->
+    <!--     %i.icon-share-alt
+    -->
+    <!--     %span Extras
+    -->
+    <!--     %i.icon-chevron-down
+    -->
+    <!--   %ul.submenu
+    -->
+    <!--     %li
+    -->
+    <!--       %a{href: "#"} Code editor
+    -->
+    <!--     %li
+    -->
+    <!--       %a{href: "#"} Grids
+    -->
+    <!--     %li
+    -->
+    <!--       %a{href: "#"} Sign in
+    -->
+    <!--     %li
+    -->
+    <!--       %a{href: "#"} Sign up
+    -->
+  </ul>
+</div>
+<!-- end sidebar
+-->
