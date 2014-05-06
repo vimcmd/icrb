@@ -33,6 +33,7 @@ ICRB Project:
         ☐ display exact date on hover approx time
         ☐ same look tables
         ☐ replace in user model admin:boolean to role:int ?
+        ☐ replace <label> with label_tag (link label with form)
       --- ✄ -----------------------
 
       Visual:

@@ -19,6 +19,7 @@ group :development do
   gem 'sqlite3', '1.3.8'
   gem "better_errors", "~> 1.1.0"
   gem "annotate", "~> 2.6.1"
+  gem 'railroady'
 end
 
 
