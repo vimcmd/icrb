@@ -1,5 +1,5 @@
 <% provide(:title, t(:edit_profile)) %>
-<div class="users-list" id="pad-wrapper">
+<div class="new-user" id="pad-wrapper">
   <div class="row" style="margin-bottom: 60px;">
     <h3>
       <%= t(:edit_profile) %>
@@ -7,83 +7,85 @@
   </div>
   <div class="row form-wrapper">
     <!-- left column -->
-    <div class="col-md-5 column">
-      <%= form_for(@user) do |f| %>
+    <div class="col-md-6 with-sidebar">
+      <%= form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        <form>
-          <!--Login -->
-          <div class="field-box">
-            <label>
-              <%= t(:login) %>
-            </label>
-            <div class="col-md-7">
-              <div class="predifined">
-                <span class="value" style="font-weight: 900; font-size: 20px;">
-                  <%= @user.login %>
-                </span>
-                <!-- = f.text_field :login, :class => 'form-control inline-input', :readonly => true -->
-              </div>
-            </div>
+      <!-- login -->
+        <div class="form-group">
+          <%= label_tag 'login', t(:login), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.text_field :login, id: 'login', class: 'form-control inline-input', style: 'color:#333333; font-weight:900; font-size:20px;',readonly: true, value: @user.login %>
           </div>
-          <!--Filial-->
-          <div class="field-box">
-            <label>
-              <%= t(:filial) %>
-            </label>
-            <div class="col-md-7">
-              <div class="predifined">
-                <div class="ui-select" style="width: 100%">
-                  <%= f.collection_select(:filial_id, @filials, :id, :name, :include_blank => t(:filial_select) , :class => "ui-select") %>
-                </div>
+        </div>
+      <!-- name -->
+        <div class="form-group">
+          <%= label_tag 'name', t(:select_name), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.text_field :login, id: 'name', class: 'form-control', placeholder: t( :select_name ) %>
+          </div>
+        </div>
+      <!-- filial -->
+        <div class="form-group">
+          <%= label_tag 'filial', t(:filial), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.collection_select(:filial_id, @filials, :id, :name, {include_blank: t(:select_filial)}, { class:"ui-select", style:"width:100%; -webkit-appearance: none;", id:"filial" } ) %>
+          </div>
+        </div>
+      <!-- cabinet -->
+        <div class="form-group">
+          <%= label_tag 'cabinet', t(:cabinet), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.text_field :cabinet, id: 'cabinet', class: 'form-control', placeholder: t( :select_cabinet ) %>
+          </div>
+        </div>
+      <!-- phone -->
+        <div class="form-group">
+          <%= label_tag 'phone', t(:phone), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.text_field :phone, id: 'phone', class: 'form-control', placeholder: t( :select_phone ) %>
+          </div>
+        </div>
+      <!-- password -->
+        <div class="form-group">
+          <%= label_tag 'password', t(:password), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.password_field :password, id: 'password', class: 'form-control', placeholder: t( :select_password ) %>
+          </div>
+        </div>
+      <!-- password confirmation -->
+        <div class="form-group">
+          <%= label_tag 'password_confirmation', t(:password_confirmation), class: 'col-md-3 control-label' %>
+          <div class="col-md-8">
+            <%= f.password_field :password_confirmation, id: 'password_confirmation', class: 'form-control', placeholder: t( :select_password_confirmation ) %>
+          </div>
+        </div>
+      <!-- submit -->
+      <div class="form-group">
+        <div class="col-md-3 control-label">
 
-                <span class="area">
+        </div>
 
-                </span>
-
-              </div>
-            </div>
-          </div>
-          <!--Cabinet -->
-          <div class="field-box">
-            <label>
-              <%= t(:cabinet) %>
-            </label>
-            <div class="col-md-7">
-              <%= f.text_field :cabinet, :class => 'form-control' %>
-            </div>
-          </div>
-          <!--Phone -->
-          <div class="field-box">
-            <label>
-              <%= t(:phone) %>
-            </label>
-            <div class="col-md-7">
-              <%= f.text_field :phone, :class => 'form-control' %>
-            </div>
-          </div>
-          <!--Password -->
-          <div class="field-box">
-            <label>
-              <%= t(:password) %>
-            </label>
-            <div class="col-md-7">
-              <%= f.password_field :password, :class => 'form-control' %>
-            </div>
-          </div>
-          <!--Password confirmation -->
-          <div class="field-box">
-            <label>
-              <%= t(:password_confirmation) %>
-            </label>
-            <div class="col-md-7">
-              <%= f.password_field :password_confirmation, :class => 'form-control' %>
-            </div>
-          </div>
-          <div class="action">
-            <%= f.submit t(:save_changes), class: "btn btn-glow btn-primary primary signup" %>
-          </div>
-        </form>
+        <div class="action">
+          <%= f.submit t(:save_changes), class: "btn btn-glow btn-primary primary signup", style:'margin-left:15px;' %>
+        </div>
+      </div>
       <% end %>
     </div>
+    <!-- right column -->
+    <div class="col-md-3 form-sidebar">
+        <div class="alert alert-info">
+            <i class="fa fa-lightbulb-o"></i>
+            <%= t( :profile_instructions ) %>
+        </div>
+<!--         <h6>Sidebar text for instructions</h6>
+        <p>Add multiple users at once</p>
+        <p>Choose one of the following file types:</p>
+        <ul>
+            <li><a href="#">Upload a vCard file</a></li>
+            <li><a href="#">Import from a CSV file</a></li>
+            <li><a href="#">Import from an Excel file</a></li>
+        </ul> -->
+    </div>
+
   </div>
 </div>

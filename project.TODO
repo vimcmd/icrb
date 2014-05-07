@@ -3,43 +3,31 @@ ICRB Project:
       1st priority:
         ☐ admin note for problems
         ☐ admin selector for problem status (submit onchange?)
-        ☐ redirect to previous page
-              redirect_to :back
-              #or
-              session[:return_to] = request.referer
-              #or
-              def some_method
-                redirect_to :back
-               rescue ActionController::RedirectBackError
-                redirect_to root_path
-              end
-
         ☐ problem statistics (charts railscasts #223)
         --- ✄ -----------------------
 
       Main functional:
         ☐ admin add && remove regcode to db
         ☐ admin online (icon)
-        ☐ filter for problems (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
+        ☐ filter for problems #DEMO (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ fill profile before send problem
-        ☐ problem count in sidebar
+        ☐ problem count in sidebar #DEMO
 
       Changes / bugs / refactor:
         ☐ create news posted by admin on main page for all
         ☐ admin add news to main page
         ☐ announcements (railscasts pro 103)
         ☐ user can see only self problems (restrict url /users/id)
-        ☐ add few problem statuses
+        ☐ add few problem statuses #DEMO
         ☐ display exact date on hover approx time
         ☐ same look tables
         ☐ replace in user model admin:boolean to role:int ?
-        ☐ replace <label> with label_tag (link label with form)
       --- ✄ -----------------------
 
       Visual:
         ☐ problem link RED color
-        ☐ instructions under send problem
-        ☐ instructions in profile settings
+        ☐ instructions under send problem #DEMO
+        ☐ instructions in profile settings #DEMO
         ☐ my problem list under send && instructions on right
         ☐ sidebar toggler always visible
         ☐ admin phones on problem page
@@ -58,6 +46,16 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ replace <label> with label_tag (link label with form) @done (14-05-07 22:03) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ redirect to previous page @done (14-05-07 16:26) @project(ICRB Project / 1st priority)
+  def some_method
+  redirect_to :back
+  rescue ActionController::RedirectBackError
+  redirect_to root_path
+  end
+  #or
+  session[:return_to] = request.referer
+ ✔ move problemall & problemadd to promlems_controller (don't forget routes) @done (14-05-07 16:21) @project(ICRB Project / 1st priority)
  ✔ trash icon instead 'delete' on users and problems @done (14-04-12 11:16) @project(ICRB Project / Visual)
  ✔ Contacts @done (14-04-10 18:44) @project(ICRB Project / Static pages)
  ✔ History @done (14-04-10 18:43) @project(ICRB Project / Static pages)

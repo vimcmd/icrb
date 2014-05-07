@@ -1,0 +1,28 @@
+  ru:
+    #Problems
+    problem_all: "Все заявки"
+    problem_content: "Описание проблемы"
+    problem_status: "Статус"
+    problem_date: "Время подачи"
+    problem_send: "Заявка отправлена"
+    problem_cancel: "Заявка отменена"
+    problem_sended: "отправлено "
+    problem_send_btn: "Отправить"
+    problem_comment: "Пометка "
+    problem_add_header: "Подать заявку о неполадке системному администратору"
+    problem_add_subheader: ""
+    problem_my_list: "Мои заявки"
+    problem_list: "Заявки"
+    problem_input: "Опишите проблему конкретнее в нескольких словах"
+    problem_ago: "назад"
+    problem_sender: "Отправитель"
+
+    problem_new: "Заявка"
+    problem_completed: "Выполнено"
+    problem_aborted: "Отказано"
+
+    # Table labels
+    problem_label_content: "Содержание"
+    problem_label_status: "Статус"
+    problem_label_date: "Дата"
+    problem_label_sender: "Отправитель"
