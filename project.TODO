@@ -9,25 +9,26 @@ ICRB Project:
       Main functional:
         ☐ admin add && remove regcode to db
         ☐ admin online (icon)
-        ☐ filter for problems #DEMO (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
+        ☐ filter for problems #DUMMY (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ fill profile before send problem
-        ☐ problem count in sidebar #DEMO
+        ☐ problem count in sidebar #DUMMY
 
       Changes / bugs / refactor:
         ☐ create news posted by admin on main page for all
         ☐ admin add news to main page
         ☐ announcements (railscasts pro 103)
         ☐ user can see only self problems (restrict url /users/id)
-        ☐ add few problem statuses #DEMO
+        ☐ add few problem statuses
         ☐ display exact date on hover approx time
         ☐ same look tables
         ☐ replace in user model admin:boolean to role:int ?
+        ☐ remove unused css
       --- ✄ -----------------------
 
       Visual:
         ☐ problem link RED color
-        ☐ instructions under send problem #DEMO
-        ☐ instructions in profile settings #DEMO
+        ☐ instructions under send problem #DUMMY
+        ☐ instructions in profile settings #DUMMY
         ☐ my problem list under send && instructions on right
         ☐ sidebar toggler always visible
         ☐ admin phones on problem page
