@@ -22,7 +22,8 @@ namespace :db do
                           phone:                 "777-77777",
                           password:              "foobar",
                           password_confirmation: "foobar",
-                          reg_code:              "qwerty" )
+                          reg_code:              "qwerty",
+                          name:                  "Администратор 9000" )
     admin.toggle!( :admin )
 
     50.times do |n|

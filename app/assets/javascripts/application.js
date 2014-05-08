@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-// = require_tree .
+//= require raphael
+//= require morris
+//= require_tree .
 

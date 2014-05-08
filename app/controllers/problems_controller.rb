@@ -45,6 +45,10 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def stat
+
+  end
+
   private
 
     def correct_user

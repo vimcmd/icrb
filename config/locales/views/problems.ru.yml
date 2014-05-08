@@ -26,3 +26,6 @@
     problem_label_status: "Статус"
     problem_label_date: "Дата"
     problem_label_sender: "Отправитель"
+
+    # Statistics
+    stat: "Статистика"

@@ -1,14 +1,22 @@
 <tr>
   <td>
-    <%= link_to user.login, user, class: "name" %>
+    <% if user.admin? %>
+      <%= link_to user.name, user.login, class: "name", style: "color:#D13333" %>
+    <% else %>
+      <%= link_to user.name, user.login, class: "name" %>
+    <% end %>
+  </td>
+  <td>
+    <%= user.login %>
   </td>
   <td class="description">
-    <%= user.created_at %>
+    <%= l((user.created_at.in_time_zone('Ekaterinburg')), format: '%d %B %Y  %H:%M') %>
   </td>
 
   <td>
     <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to t( :user_delete ), user, method: :delete, data: { confirm: t( :user_you_shure ) } %>
+      <%= link_to t( :user_delete ), user, method: :delete, data: { confirm: t( :user_you_shure_delete ) + user.name.to_s + "?" } %>
+      <!-- add make admin -->
     <% end %>
   </td>
 

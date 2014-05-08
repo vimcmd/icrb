@@ -11,7 +11,7 @@
       <a href="<%= user_path(object) %>"></a>
         <div class="col-md-3 b-right">
           <h2 class="name">
-            <%= link_to object.login, object %>
+            <%= link_to object.name, object.login %>
           </h2>
           <h4>
             <i class="fa fa-phone"></i>
@@ -23,6 +23,7 @@
             <li><i class="fa fa-home"></i><%= object.filial.name %>, <strong>каб. <%= object.cabinet %></strong></li>
             <li><i class="fa fa-compass"></i><%= object.filial.address %></li>
             <li><i class="fa fa-phone"></i><%= object.filial.phone %></li>
+            <li><i class="fa fa-sign-in"></i><%= object.login %></li>
           </ul>
         </div>
     </div>
