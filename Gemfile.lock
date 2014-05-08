@@ -36,7 +36,7 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    bootstrap-sass (3.1.1.1)
+    bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.10)
       will_paginate
@@ -136,7 +136,7 @@ DEPENDENCIES
   annotate (~> 2.6.1)
   bcrypt-ruby (~> 3.0.0)
   better_errors (~> 1.1.0)
-  bootstrap-sass (~> 3.1.1)
+  bootstrap-sass (~> 3.0.3.0)
   bootstrap-will_paginate (~> 0.0.10)
   coffee-rails (~> 3.2.1)
   faker (~> 1.2.0)
@@ -149,7 +149,7 @@ DEPENDENCIES
   rails-i18n (~> 3.0.0)
   rails_12factor
   russian (~> 0.6.0)
-  sass-rails (>= 3.2)
+  sass-rails (~> 3.2.3)
   sqlite3 (= 1.3.8)
   uglifier (~> 2.4.0)
   will_paginate (~> 3.0.5)
