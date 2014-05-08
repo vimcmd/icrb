@@ -1,7 +1,7 @@
 ICRB Project:
 
       1st priority:
-        ☐ problem statistics (charts railscasts #223)
+        ✔ problem statistics (charts railscasts #223) @done (14-05-09 02:08)
         ☐ admin selector for problem status (submit onchange?)
         ☐ admin note for problems
         ☐ split completed problems
@@ -12,7 +12,7 @@ ICRB Project:
         ☐ admin online (icon)
         ☐ filter for problems #DUMMY (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
         ☐ fill profile before send problem
-        ☐ problem count in sidebar #DUMMY
+        ✔ problem count in sidebar @done (14-05-09 02:08)
 
       Changes / bugs / refactor:
         ☐ create news posted by admin on main page for all
@@ -36,6 +36,7 @@ ICRB Project:
         ☐ message symbols countdown (exclude asset from dev?)
         ☐ dropdown style like pop-dialog
         ☐ flash. helper for add fa.icons
+        ☐ morris chart #statistics
     --- ✄ -----------------------
 
       I18n:
