@@ -39,7 +39,7 @@
             <% @problem.each do |problem| %>
 
               <tr id="<%= problem.id %>">
-                <td>
+                <td class="col-lg-6">
                   <span class="name"><%= problem.content %></span>
 
                     <!-- admin controls -->
@@ -51,13 +51,12 @@
 
                   <span class="comment" style="text-align: right;"><%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %> | <%= l((problem.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
                 </td>
-                <td>
+                <td class="col-md-1">
                   <%= render 'shared/problem_status', object: problem %>
-
-
                 </td>
                 <td>
-                  <span class="name"><%= problem.user.login %></span>
+                  <span class="name"><%= problem.user.name %></span>
+                  <strong><%= problem.user.login %></strong>
                     <% if !problem.user.filial.nil? %>
                       <span style="display:block"><%= problem.user.filial.name %> каб. <%= problem.user.cabinet %></span>
                       <span style="display:block"><%= problem.user.filial.address %></span>
