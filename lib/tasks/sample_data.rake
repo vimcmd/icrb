@@ -26,7 +26,7 @@ namespace :db do
                           name:                  "Администратор 9000" )
     admin.toggle!( :admin )
 
-    50.times do |n|
+    15.times do |n|
       cabinet      = rand(1..99).to_s
       filial_id    = rand(1..5)
       name         = Faker::Name.first_name
@@ -46,15 +46,15 @@ namespace :db do
                           phone:                 phone,
                           reg_code:              reg_code,
                           )
-      user.created_at = rand(1..30).days.ago
+      user.created_at = rand(1..40).days.ago
       user.save
-      3.times do |p|
+      2.times do |p|
         problems = user.problems.create!(
                                           admin_comment: Faker::Lorem.sentence(1),
                                           content:       Faker::Lorem.sentence(2),
                                           status_id:     rand(0..2)
                                          )
-        problems.created_at = rand( 1..50 ).days.ago
+        problems.created_at = rand( 1..30 ).days.ago
         problems.save
       end
     end
