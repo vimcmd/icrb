@@ -1,3 +1,4 @@
+#encoding: utf-8
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
@@ -45,15 +46,17 @@ namespace :db do
                           phone:                 phone,
                           reg_code:              reg_code,
                           )
-      user.created_at = rand(20..250).days.ago
+      user.created_at = rand(1..30).days.ago
       user.save
-      problems = user.problems.create!(
-                                        admin_comment: Faker::Lorem.sentence(1),
-                                        content:       Faker::Lorem.sentence(2),
-                                        status_id:     rand(0..2)
-                                       )
-      problems.created_at = rand( 1..50 ).days.ago
-      problems.save
+      3.times do |p|
+        problems = user.problems.create!(
+                                          admin_comment: Faker::Lorem.sentence(1),
+                                          content:       Faker::Lorem.sentence(2),
+                                          status_id:     rand(0..2)
+                                         )
+        problems.created_at = rand( 1..50 ).days.ago
+        problems.save
+      end
     end
   end
 

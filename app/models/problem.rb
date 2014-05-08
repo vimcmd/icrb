@@ -20,4 +20,21 @@ class Problem < ActiveRecord::Base
   validates :user_id, presence: true
 
   default_scope order: 'problems.created_at DESC'
+
+  # method for chart data in statistics
+  def self.total_grouped_by_day(start)
+    problems = where(created_at: start.beginning_of_day..Time.zone.now)
+    problems = problems.group("date(created_at)")
+    problems = problems.select("created_at, count(created_at) as total_count, status_id")
+    problems.group_by { |p| p.created_at.to_date }
+  end
+
+  #sidebar new problems count in span
+  def self.new_problems(start)
+    problems = where(created_at: start.beginning_of_day..Time.zone.now)
+    problems = problems.group("status_id")
+    problems = problems.select("created_at, status_id, count(status_id) as problems_new_count")
+    # problems.group_by { |p| p.status_id }
+  end
+
 end

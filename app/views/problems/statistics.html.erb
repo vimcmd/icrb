@@ -1,0 +1,21 @@
+<% provide(:title, t(:stat)) %>
+<div id="pad-wrapper">
+  <%= content_tag :div, "", id: "statistics", data: { chart: chart_data } %>
+
+  <script type="text/coffeescript">
+    jQuery ->
+
+      new Morris.Line(
+
+        element: "statistics"
+
+        data: $('#statistics').data('chart')
+
+        xkey: "created_at"
+
+        ykeys: ['users_count', 'problems_total', 'problems_new', 'problems_completed', 'problems_canceled']
+
+        labels: ['New users', 'Problems', 'P.new', 'P.completed', 'P.canceled']
+      )
+  </script>
+</div>

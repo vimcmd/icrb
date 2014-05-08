@@ -26,7 +26,10 @@
           </span>
           <!--DUMMY
           -->
-          <span class="count">5</span>
+
+          <span class="count">
+            <%= Problem.where(status_id: 0).new_problems(1.week.ago).try(:first).try(:problems_new_count) || 0 %>
+          </span>
           <i class="icon-chevron-down"></i>
         </a>
         <ul class="submenu">

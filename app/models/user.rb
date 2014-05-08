@@ -38,7 +38,13 @@ class User < ActiveRecord::Base
 
   validate  :validate_reg_code, :on => :create
 
-
+  # method for chart data in statistics
+  def self.total_grouped_by_day(start)
+    users = where(created_at: start.beginning_of_day..Time.zone.now)
+    users = users.group("date(created_at)")
+    users = users.select("created_at, count(created_at) as total_count")
+    users.group_by { |u| u.created_at.to_date }
+  end
 
   def feed
     # temporal

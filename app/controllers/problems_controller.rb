@@ -21,9 +21,14 @@ class ProblemsController < ApplicationController
 
   def destroy
     begin
-      @problem.destroy
-      redirect_to :back
-      flash[:info] = t( :problem_cancel )
+      if @problem.status_id == 0
+        @problem.destroy
+        redirect_to :back
+        flash[:info] = t( :problem_cancel )
+      else
+        redirect_to :back
+        flash[:warning] = t( :problem_cant_cancel )
+      end
     rescue ActionController::RedirectBackError
       redirect_to root_path
     end
@@ -45,7 +50,8 @@ class ProblemsController < ApplicationController
     end
   end
 
-  def stat
+  def statistics
+    #chart data places in problems_helper#chart_data
 
   end
 

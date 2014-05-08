@@ -1,7 +1,7 @@
 Icrb::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :problems, only: [:create, :destroy, :all, :add, :stat]
+  resources :problems, only: [:create, :destroy, :all, :add, :statistics]
   resources :filials,  only: [:create, :destroy]
 
   root               to: 'static_pages#home'
@@ -21,7 +21,7 @@ Icrb::Application.routes.draw do
   # Problems
   match '/problems/add',        to: 'problems#add'
   match '/problems/all',        to: 'problems#all'
-  match '/problems/stat',       to: 'problems#stat'
+  match '/problems/stat',       to: 'problems#statistics'
 
   # Sign up / Sign in / Sign out
   match '/signup',   to: 'users#new'

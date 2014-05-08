@@ -20,6 +20,7 @@
     problem_new: "Заявка"
     problem_completed: "Выполнено"
     problem_aborted: "Отказано"
+    problem_cant_cancel: "Заявка внесена в журнал и не может быть отменена"
 
     # Table labels
     problem_label_content: "Содержание"
