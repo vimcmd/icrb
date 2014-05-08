@@ -18,4 +18,4 @@
 //= require bootstrap/transition
 //= require raphael
 //= require morris
-//= require_directory .
+//= require_tree .
