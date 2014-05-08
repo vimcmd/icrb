@@ -3,7 +3,6 @@ namespace :db do
   task populate: :environment do
     make_invite
     make_users_with_problems
-    make_problems
     make_filials
   end
 
