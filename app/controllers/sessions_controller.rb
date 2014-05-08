@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    sign_out
     user = User.find_by_login(params[:session][:login].downcase)
     if user && user.authenticate(params[:session][:password])
       sign_in user

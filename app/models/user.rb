@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :login, :password, :password_confirmation, :reg_code, :filial_id, :cabinet, :phone
+  attr_accessible :login, :password, :password_confirmation, :reg_code, :filial_id, :cabinet, :phone, :name
   attr_accessor :reg_code
 
   has_many :problems, dependent: :destroy

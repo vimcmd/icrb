@@ -1,9 +1,10 @@
 ICRB Project:
 
       1st priority:
-        ☐ admin note for problems
-        ☐ admin selector for problem status (submit onchange?)
         ☐ problem statistics (charts railscasts #223)
+        ☐ admin selector for problem status (submit onchange?)
+        ☐ admin note for problems
+        ☐ split completed problems
         --- ✄ -----------------------
 
       Main functional:

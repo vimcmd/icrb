@@ -2,7 +2,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     make_invite
-    make_users
+    make_users_with_problems
     make_problems
     make_filials
   end
@@ -15,54 +15,57 @@ namespace :db do
     rc = Invite.create!( code: "qwerty" )
   end
 
-  def make_users
-    admin = User.create!( login:    "admin",
-                          filial_id: "1",
-                          cabinet: "29",
-                          phone: "777-77777",
-                          password: "foobar",
+  def make_users_with_problems
+    admin = User.create!( login:                 "admin",
+                          filial_id:             "1",
+                          cabinet:               "29",
+                          phone:                 "777-77777",
+                          password:              "foobar",
                           password_confirmation: "foobar",
-                          reg_code: "qwerty" )
+                          reg_code:              "qwerty" )
     admin.toggle!( :admin )
 
-    15.times do |n|
-      login  = Faker::Name.first_name + rand(1..999).to_s
-      filial_id = rand(1..5)
-      cabinet = rand(1..99).to_s
-      phone = Faker::PhoneNumber.cell_phone
-      password  = "password"
-      reg_code = "qwerty"
-      User.create!(login: login,
-                   filial_id: filial_id,
-                   cabinet: cabinet,
-                   phone: phone,
-                   password: password,
-                   password_confirmation: password,
-                   reg_code: reg_code)
+    50.times do |n|
+      cabinet      = rand(1..99).to_s
+      filial_id    = rand(1..5)
+      name         = Faker::Name.first_name
+      login        = name + rand(1..999).to_s
+      password     = "password"
+      phone        = Faker::PhoneNumber.cell_phone
+      reg_code     = "qwerty"
+      user_created = rand(1..99).days.ago
+      name_full    = name + " " + Faker::Name.last_name
+      user = User.create!(
+                          cabinet:               cabinet,
+                          filial_id:             filial_id,
+                          login:                 login,
+                          name:                  name_full,
+                          password:              password,
+                          password_confirmation: password,
+                          phone:                 phone,
+                          reg_code:              reg_code,
+                          )
+      user.created_at = rand(20..250).days.ago
+      user.save
+      problems = user.problems.create!(
+                                        admin_comment: Faker::Lorem.sentence(1),
+                                        content:       Faker::Lorem.sentence(2),
+                                        status_id:     rand(0..2)
+                                       )
+      problems.created_at = rand( 1..50 ).days.ago
+      problems.save
     end
   end
 
   def make_filials
-    5.times do |f|
+    7.times do |f|
       Faker::Config.locale = 'ru'
-      name = Faker::Company.name
-      address = Faker::Address.street_address
-      phone = Faker::PhoneNumber.cell_phone
-      Filial.create!(name: name,
+      address              = Faker::Address.street_address
+      name                 = Faker::Company.name
+      phone                = Faker::PhoneNumber.cell_phone
+      Filial.create!(name:    name,
                      address: address,
-                     phone: phone)
-    end
-  end
-
-  def make_problems
-    3.times do
-      users = User.all(limit: 10)
-      status_id = rand(0..2)
-      content = Faker::Lorem.sentence(2)
-      comment = Faker::Lorem.sentence(1)
-      users.each { |user| user.problems.create!(content: content,
-                                                admin_comment: comment,
-                                                status_id: status_id) }
+                     phone:   phone)
     end
   end
 
