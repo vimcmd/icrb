@@ -13,6 +13,7 @@
         </span>
       <% end %>
     <% end %>
+
     <% if signed_in? && current_user.admin? %>
       <!--if signed_in && admin
       -->
@@ -20,8 +21,6 @@
         <%= active_link?(users_path) || active_link?(problems_all_path) %>
         <a class="dropdown-toggle" href="#">
           <i class="fa fa-cogs"></i>
-          <!--icon-user-md
-          -->
           <span>
             <%= t :admin %>
           </span>

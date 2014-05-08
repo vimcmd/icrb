@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem "bootstrap-sass", "~> 3.0.3.0"
 gem "haml", "~> 4.0.4"
 gem "bcrypt-ruby", "~> 3.0.0"
 gem "faker", "~> 1.2.0"
@@ -11,6 +10,7 @@ gem "bootstrap-will_paginate", "~> 0.0.10"
 gem "font-awesome-rails", "~> 4.0.3.1"
 gem 'rails-i18n', '~> 3.0.0'
 gem 'russian', '~> 0.6.0'
+gem "jquery-rails"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -26,7 +26,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '>= 3.2'
+  gem 'bootstrap-sass', '~> 3.1.1'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -35,7 +36,6 @@ group :assets do
   gem "uglifier", "~> 2.4.0"
 end
 
-gem "jquery-rails", "~> 3.0.4"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
