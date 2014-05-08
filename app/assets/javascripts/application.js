@@ -18,4 +18,5 @@
 //= require bootstrap/transition
 //= require raphael
 //= require morris
-//= require_directory .
+//= require coffee-script
+//= require_tree .
