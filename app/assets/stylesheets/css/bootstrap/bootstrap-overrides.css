@@ -19,6 +19,9 @@ h1,h2,h3,h4,h5,h6{
 .label-info, .badge-info {
 	background-color: rgb(104, 163, 213);
 }
+.label-warning, .badge-warning {
+	background-color: #fcf8e3;
+}
 
 /* alerts */
 .alert [class^="fa-"],
@@ -50,6 +53,10 @@ h1,h2,h3,h4,h5,h6{
 .alert-danger [class^="icon-"],
 .alert-danger [class*=" icon-"] {
 	color: #d5393e;
+}
+
+.alert-dismissable .close {
+	font-size: 30px;
 }
 
 
@@ -216,7 +223,7 @@ textarea::-webkit-input-placeholder {
 /* navbar brand*/
 .navbar-inverse .navbar-brand {
 	color: #ffffff;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-weight: bold;
 	padding: 11px 20px;
 }

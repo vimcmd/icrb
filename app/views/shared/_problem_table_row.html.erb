@@ -1,0 +1,41 @@
+<tr id="<%= object.id %>">
+  <td class="col-md-6">
+    <span class="name" style="margin-bottom:15px;"><%= object.content %></span>
+
+      <!-- admin controls -->
+      <% if current_user.admin? %>
+        <%= render 'shared/problem_comment' %>
+      <% else %>
+        <span class="comment"><%= t( :problem_comment ) %><%= object.admin_comment %></span>
+      <% end %>
+
+    <span class="comment" style="text-align: right;"><%= time_ago_in_words(object.created_at) %> <%= t(:problem_ago) %> | <%= l((object.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
+  </td>
+  <td class="col-md-1" style="text-align:center;">
+    <%= render 'shared/problem_status', object: object %>
+  </td>
+  <% if params[:action] == 'all' || params[:action] == '' %>
+    <td class="col-md-2">
+      <span class="name"><%= object.user.name %></span>
+      <strong><%= object.user.login %></strong>
+        <% if !object.user.filial.nil? %>
+          <span style="display:block"><%= object.user.filial.name %> каб. <%= object.user.cabinet %></span>
+          <span style="display:block"><%= object.user.filial.address %></span>
+          <span style="display:block"><%= object.user.phone %></span>
+        <% end %>
+    </td>
+  <% end %>
+  <td class="col-md-2" style="text-align:center;">
+    <span>
+      <% if current_user?(object.user) %>
+        <%= link_to object, method: :delete,
+                                         data: { confirm: t(:user_you_shure),
+                                         title: object.content },
+                                         class: "btn-flat icon delete-user" do %>
+          <i class="icon-trash"></i>
+        <% end %>
+      <% end %>
+    </span>
+
+  </td>
+</tr>

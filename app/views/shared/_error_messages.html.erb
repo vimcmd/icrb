@@ -1,12 +1,15 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
-    <div class="alert alert-danger alert-dismissable">
+    <div class="alert alert-danger alert-dismissable" style="margin-top:10px;">
+      <i class="fa fa-times-circle"></i>
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 
       <%= t(:form_contains) %>
-      <%= object.errors.count %>
-      <%= Russian.pluralize(object.errors.count, "ошибку", "ошибки", "ошибок") %>
-      <ul style="text-align: left;">
+      <strong>
+        <%= object.errors.count %>
+        <%= Russian.pluralize(object.errors.count, "ошибку", "ошибки", "ошибок") + ":" %>
+      </strong>
+      <ul style="text-align: left; padding-left: 52px;">
         <% object.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>

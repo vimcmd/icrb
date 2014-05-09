@@ -1,29 +1,24 @@
 ICRB Project:
 
       1st priority:
-        ✔ problem statistics (charts railscasts #223) @done (14-05-09 02:08)
+        ☐ problem statistics
         ☐ admin selector for problem status (submit onchange?)
         ☐ admin note for problems
-        ☐ split completed problems
         --- ✄ -----------------------
 
       Main functional:
         ☐ admin add && remove regcode to db
         ☐ admin online (icon)
         ☐ filter for problems #DUMMY (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
-        ☐ fill profile before send problem
-        ✔ problem count in sidebar @done (14-05-09 02:08)
 
       Changes / bugs / refactor:
         ☐ create news posted by admin on main page for all
         ☐ admin add news to main page
         ☐ announcements (railscasts pro 103)
         ☐ user can see only self problems (restrict url /users/id)
-        ☐ add few problem statuses
         ☐ display exact date on hover approx time
-        ☐ same look tables
         ☐ replace in user model admin:boolean to role:int ?
-        ☐ remove unused css
+        ☐ move inline html styles to css
       --- ✄ -----------------------
 
       Visual:
@@ -37,6 +32,7 @@ ICRB Project:
         ☐ dropdown style like pop-dialog
         ☐ flash. helper for add fa.icons
         ☐ morris chart #statistics
+        ☐ replace profile dropdown with two row fields
     --- ✄ -----------------------
 
       I18n:
@@ -49,6 +45,12 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ fill profile before send problem @done (14-05-09 22:19) @project(ICRB Project / Main functional)
+ ✔ same look tables @done (14-05-09 22:18) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ split completed problems @done (14-05-09 20:20) @project(ICRB Project / 1st priority)
+ ✔ remove unused css @done (14-05-09 16:08) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ add few problem statuses @done (14-05-09 16:08) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ problem count in sidebar @done (14-05-09 02:08) @project(ICRB Project / Main functional)
  ✔ replace <label> with label_tag (link label with form) @done (14-05-07 22:03) @project(ICRB Project / Changes / bugs / refactor)
  ✔ redirect to previous page @done (14-05-07 16:26) @project(ICRB Project / 1st priority)
   def some_method

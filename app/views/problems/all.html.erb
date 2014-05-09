@@ -1,87 +1,57 @@
 <% if current_user.admin? %>
-<% provide(:title, t(:problem_all)) %>
-<div id="pad-wrapper">
-  <div class="table-wrapper">
+  <% provide(:title, t(:problem_all)) %>
+  <div id="pad-wrapper">
+    <div class="table-wrapper">
 
-    <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
-      <h3><%= t(:problem_all) %></h3>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-
-      <!-- search elements DUMMY -->
-      <div class="row filter-block">
-        <div class="pull-right">
-                  <div class="btn-group pull-right">
-                      <button class="glow left large">All</button>
-                      <button class="glow middle large">Pending</button>
-                      <button class="glow right large">Completed</button>
-                  </div>
-                <input type="text" class="search order-search" placeholder="Search for an order..">
-        </div>
+      <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
+        <h3><%= t(:problem_all) %></h3>
+        <!-- DUMMY search elements -->
+          <div class="pull-right">
+                    <div class="btn-group pull-right">
+                        <button class="glow left large">All</button>
+                        <button class="glow middle large">Pending</button>
+                        <button class="glow right large">Completed</button>
+                    </div>
+                  <input type="text" class="search order-search" placeholder="Search for an order..">
+          </div>
       </div>
 
-        <table class="table table-hover">
-        <!-- thead -->
-          <thead>
-            <tr>
-              <th><%= t(:problem_label_content) %></th>
-              <th><%= t(:problem_label_status) %></th>
-              <th><%= t(:problem_label_sender) %></th>
+      <div class="row">
+        <div class="col-md-12">
 
-            </tr>
-          </thead>
+        <!-- new problems -->
+          <table class="table table-hover">
+          <%= will_paginate @problem_new %>
+          <!-- thead -->
+            <%= render 'shared/problem_table_head' %>
 
-          <!-- tbody -->
-          <tbody>
+            <!-- tbody -->
+            <tbody>
+              <% @problem_new.each do |p| %>
+                <%= render 'shared/problem_table_row', object: p %>
+              <% end %>
+            </tbody>
 
-            <% @problem.each do |problem| %>
 
-              <tr id="<%= problem.id %>">
-                <td class="col-lg-6">
-                  <span class="name"><%= problem.content %></span>
+          </table>
+          <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
+            <h3><%= t(:problem_finished) %></h3>
+          </div>
+        <!-- completed or aborted problems -->
+          <table class="table table-hover">
+            <!-- tbody -->
+            <tbody>
+              <% @problem_completed.each do |p| %>
+                <%= render 'shared/problem_table_row', object: p %>
+              <% end %>
+            </tbody>
 
-                    <!-- admin controls -->
-                    <% if current_user.admin? %>
-                      <%= render 'shared/problem_comment' %>
-                    <% else %>
-                      <span class="comment"><%= t( :problem_comment ) %><%= problem.admin_comment %></span>
-                    <% end %>
-
-                  <span class="comment" style="text-align: right;"><%= time_ago_in_words(problem.created_at) %> <%= t(:problem_ago) %> | <%= l((problem.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
-                </td>
-                <td class="col-md-1">
-                  <%= render 'shared/problem_status', object: problem %>
-                </td>
-                <td>
-                  <span class="name"><%= problem.user.name %></span>
-                  <strong><%= problem.user.login %></strong>
-                    <% if !problem.user.filial.nil? %>
-                      <span style="display:block"><%= problem.user.filial.name %> каб. <%= problem.user.cabinet %></span>
-                      <span style="display:block"><%= problem.user.filial.address %></span>
-                      <span style="display:block"><%= problem.user.phone %></span>
-                    <% end %>
-                  <span>
-                    <% if current_user?(problem.user) %>
-                      <%= link_to problem, method: :delete,
-                                                       data: { confirm: t(:user_you_shure),
-                                                       title: problem.content },
-                                                       class: "btn-flat icon delete-user" do %>
-                        <i class="icon-trash"></i>
-                      <% end %>
-                    <% end %>
-                  </span>
-                </td>
-              </tr>
-            <% end %>
-
-          </tbody>
-
-        </table>
-        <%= will_paginate @problem %>
+          </table>
+          <%= will_paginate @problem_completed %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% else %>
+
 <% end %>

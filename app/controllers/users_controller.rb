@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_filter :prepare_filials
 
   def new
+    sign_out
     @user = User.new
   end
 
@@ -20,19 +21,21 @@ class UsersController < ApplicationController
   def show
     begin
       # add && current_user?
-      if signed_in? #&& current_user? current_user.admin?
+      if current_user.admin?
         @user = User.find(params[:id])
         @problems = @user.problems.paginate( page: params[:page], per_page: 10, )
+        @current_user_problems = Problem.where( "user_id = ?", @user.id ).paginate( page: params[:page], per_page: 5, )
       else
         flash[:warning] = t( :please_signin )
         redirect_to signin_path
       end
     rescue
-      redirect_to root_path
+      redirect_to :back
     end
   end
 
   def create
+    sign_out
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
@@ -46,24 +49,24 @@ class UsersController < ApplicationController
 
   def edit
     @filial = Filial.find_by_id(@user.filial_id)
-
   end
 
   def update
     if @user.update_attributes(params[:user])
       flash[:success] = t(:profile_updated)
       sign_in @user
-      redirect_to root_path
+      redirect_to :back
       # redirect_to @user
     else
-      render 'edit'
+      # render 'edit'
+      redirect_to :back
     end
   end
 
   def destroy
     User.find( params[:id] ).destroy
     flash[:danger] = t( :user_destroyed )
-    redirect_to users_url
+    redirect_to :back
   end
 
   private

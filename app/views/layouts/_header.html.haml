@@ -22,13 +22,12 @@
       %li.settings.dropdown
         %a.dropdown-toggle.hidden-xs.hidden-sm{"data-toggle" => "dropdown", href: "#"}
           %i.fa.fa-user
-            %span= t :account
-            %b.caret
+          %span
+            = current_user.login
+          %b.caret
         %ul.dropdown-menu
           %li
-            = link_to t(:profile), current_user
-          %li
-            = link_to t(:settings), edit_user_path(current_user)
+            = link_to t(:profile), edit_user_path(current_user)
           %li.devider
           %li
             = link_to t(:signout), signout_path, method: "delete"

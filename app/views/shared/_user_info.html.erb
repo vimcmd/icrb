@@ -8,24 +8,59 @@
 <div class="row">
   <div class="col-md-12" style="top: -30px;">
     <div class="row user-profile">
-      <a href="<%= user_path(object) %>"></a>
-        <div class="col-md-3 b-right">
+      <div class="col-md-3 b-right">
+        <% if !object.name.blank? %>
           <h2 class="name">
             <%= link_to object.name, object.login %>
           </h2>
-          <h4>
-            <i class="fa fa-phone"></i>
+        <% else %>
+          <h2 class="name">
+            <%= link_to object.login, object %>
+          </h2>
+        <% end %>
+        <h4>
+          <i class="fa fa-phone"></i>
+          <% if !object.phone.blank? %>
             <%= object.phone %>
-          </h4>
-        </div>
-        <div class="col-md-6 address">
-          <ul>
-            <li><i class="fa fa-home"></i><%= object.filial.name %>, <strong>каб. <%= object.cabinet %></strong></li>
-            <li><i class="fa fa-compass"></i><%= object.filial.address %></li>
-            <li><i class="fa fa-phone"></i><%= object.filial.phone %></li>
-            <li><i class="fa fa-sign-in"></i><%= object.login %></li>
-          </ul>
-        </div>
+          <% else %>
+            <%= t( :user_blank ) %>
+          <% end %>
+        </h4>
+      </div>
+      <div class="col-md-6 address">
+        <ul>
+          <% if !object.filial_id.blank? %>
+            <li>
+              <i class="fa fa-home"></i>
+                <%= object.filial.name %>, <strong>каб. <%= object.cabinet %></strong>
+            </li>
+            <li>
+              <i class="fa fa-compass"></i>
+                  <%= object.filial.address %>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+                  <%= object.filial.phone %>
+            </li>
+          <% else %>
+            <li>
+              <i class="fa fa-home"></i>
+              <%= t( :user_blank ) %>
+            </li>
+            <li>
+              <i class="fa fa-compass"></i>
+              <%= t( :user_blank ) %>
+            <li>
+              <i class="fa fa-phone"></i>
+              <%= t( :user_blank ) %>
+            </li>
+          <% end %>
+          <li>
+            <i class="fa fa-sign-in"></i>
+                <%= object.login %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

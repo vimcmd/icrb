@@ -1,6 +1,19 @@
+<% provide( :title, @user.name ) %>
 <div id="pad-wrapper">
   <%= render 'shared/user_info', object: @user %>
-  <%= render 'problems/problemlist' %>
+
+  <table class="table table-hover">
+  <%= will_paginate @current_user_problems %>
+    <%= render 'shared/problem_table_head' %>
+
+    <tbody>
+      <% @current_user_problems.each do |p| %>
+        <%= render 'shared/problem_table_row', object: p %>
+      <% end %>
+    </tbody>
+
+  </table>
+
 
 <% if current_user.admin? %>
 <% else %>

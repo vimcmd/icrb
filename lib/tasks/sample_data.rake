@@ -52,7 +52,7 @@ namespace :db do
         problems = user.problems.create!(
                                           admin_comment: Faker::Lorem.sentence(1),
                                           content:       Faker::Lorem.sentence(2),
-                                          status_id:     rand(0..2)
+                                          status_id:     rand(0..3)
                                          )
         problems.created_at = rand( 1..30 ).days.ago
         problems.save

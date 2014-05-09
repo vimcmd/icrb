@@ -1,9 +1,17 @@
 <tr>
   <td>
     <% if user.admin? %>
-      <%= link_to user.name, user.login, class: "name", style: "color:#D13333" %>
+      <% if user.name.blank?%>
+        <%= link_to user.login, user, class: "name", style: "color:#D13333" %>
+      <% else %>
+        <%= link_to user.name, user, class: "name", style: "color:#D13333" %>
+      <% end %>
     <% else %>
-      <%= link_to user.name, user.login, class: "name" %>
+      <% if user.name.blank?%>
+        <%= link_to user.login, user, class: "name" %>
+      <% else %>
+        <%= link_to user.name, user, class: "name" %>
+      <% end %>
     <% end %>
   </td>
   <td>

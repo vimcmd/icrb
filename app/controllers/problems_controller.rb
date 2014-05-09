@@ -35,15 +35,23 @@ class ProblemsController < ApplicationController
   end
 
   def add
-    if signed_in?
-      @problem = current_user.problems.build
-      @feed_items = current_user.feed.paginate( page: params[:page], per_page: 10, )
+    if (!current_user.filial.blank? && !current_user.cabinet.blank?)
+      if signed_in?
+        @current_user_problems = Problem.where("user_id = ?", current_user.id).paginate( page: params[:page], per_page: 10, )
+        @problem = current_user.problems.build
+        @feed_items = current_user.feed.paginate( page: params[:page], per_page: 10, )
+      end
+    else
+        redirect_to edit_user_path(current_user)
+        # redirect_to controller: 'users', action: 'edit', id: current_user.id
+        flash[:warning] = t( :user_profile_please_fill )
     end
   end
 
   def all
     if current_user.admin?
-      @problem = Problem.paginate( page: params[:page], per_page: 10, )
+      @problem_new = Problem.where("status_id = ?  OR status_id = ?", 0, 3).paginate( page: params[:page], per_page: 5, )
+      @problem_completed = Problem.where("status_id = ? OR status_id = ?", 1, 2).paginate( page: params[:page], per_page: 5, )
     else
       flash[:warning] = t( :user_restricted )
       redirect_to signin_path
@@ -52,6 +60,12 @@ class ProblemsController < ApplicationController
 
   def statistics
     #chart data places in problems_helper#chart_data
+    if current_user.admin?
+
+    else
+      flash[:warning] = t( :user_restricted )
+      redirect_to signin_path
+    end
 
   end
 

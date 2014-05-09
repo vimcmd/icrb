@@ -1,6 +1,7 @@
   ru:
     #Problems
     problem_all: "Все заявки"
+    problem_finished: "Выполненные"
     problem_content: "Описание проблемы"
     problem_status: "Статус"
     problem_date: "Время подачи"
@@ -20,6 +21,7 @@
     problem_new: "Заявка"
     problem_completed: "Выполнено"
     problem_aborted: "Отказано"
+    problem_waiting: "Ожидание"
     problem_cant_cancel: "Заявка внесена в журнал и не может быть отменена"
 
     # Table labels
@@ -27,6 +29,7 @@
     problem_label_status: "Статус"
     problem_label_date: "Дата"
     problem_label_sender: "Отправитель"
+    problem_label_options: "Опции"
 
     # Statistics
     stat: "Статистика"
