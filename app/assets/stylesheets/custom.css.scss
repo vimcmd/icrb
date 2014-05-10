@@ -57,11 +57,20 @@
   td {
     .name {
       color      : #3389d1;
-      display    : block;
+      // display    : block;
       font-size  : 14px;
       font-weight: 600;
       margin     : 15px 0 0 0;
-      width      : 100%;
+      // width      : 100%;
+      word-wrap  : break-word;
+    }
+    .login {
+      color      : #526273;
+      display    : block;
+      font-size  : 12px;
+      // font-weight: 600;
+      margin     : 15px 0 0 0;
+      // width      : 100%;
       word-wrap  : break-word;
     }
     .comment {

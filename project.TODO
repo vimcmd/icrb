@@ -9,7 +9,8 @@ ICRB Project:
       Main functional:
         ☐ admin add && remove regcode to db
         ☐ admin online (icon)
-        ☐ filter for problems #DUMMY (by date, by type etc.) http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
+        ☐ filter for problems #DUMMY (by date, by type etc.)
+            http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
 
       Changes / bugs / refactor:
         ☐ create news posted by admin on main page for all
@@ -19,6 +20,11 @@ ICRB Project:
         ☐ display exact date on hover approx time
         ☐ replace in user model admin:boolean to role:int ?
         ☐ move inline html styles to css
+        ☐ disable multiple submit
+            http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link
+            http://getbootstrap.com/javascript/#buttons
+        ☐ disable morris chart on env:production #TEMP
+        ☐ problem_table <tr> markup with div.row, not <span>
       --- ✄ -----------------------
 
       Visual:

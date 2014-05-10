@@ -1,6 +1,13 @@
 <tr id="<%= object.id %>">
   <td class="col-md-6">
-    <span class="name" style="margin-bottom:15px;"><%= object.content %></span>
+    <div class="row">
+      <div class="col-md-8 name">
+        <%= object.content %>
+      </div>
+      <div class="col-md-4 comment" style="text-align: right;">
+        <%= time_ago_in_words(object.created_at) %> <%= t(:problem_ago) %> | <%= l((object.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %>
+      </div>
+    </div>
 
       <!-- admin controls -->
       <% if current_user.admin? %>
@@ -9,19 +16,34 @@
         <span class="comment"><%= t( :problem_comment ) %><%= object.admin_comment %></span>
       <% end %>
 
-    <span class="comment" style="text-align: right;"><%= time_ago_in_words(object.created_at) %> <%= t(:problem_ago) %> | <%= l((object.created_at.in_time_zone('Ekaterinburg')), format: '%a. %e %b, %H:%M') %></span>
   </td>
   <td class="col-md-1" style="text-align:center;">
     <%= render 'shared/problem_status', object: object %>
   </td>
   <% if params[:action] == 'all' || params[:action] == '' %>
     <td class="col-md-2">
-      <span class="name"><%= object.user.name %></span>
-      <strong><%= object.user.login %></strong>
+      <div class="row">
+        <div class="col-md-12">
+          <%= link_to object.user.name, object.user, class: "name" %>
+          <span>@<%= object.user.login %></span>
+      </div>
+      </div>
         <% if !object.user.filial.nil? %>
-          <span style="display:block"><%= object.user.filial.name %> каб. <%= object.user.cabinet %></span>
-          <span style="display:block"><%= object.user.filial.address %></span>
-          <span style="display:block"><%= object.user.phone %></span>
+          <div class="row">
+            <div class="col-md-12">
+              <%= object.user.filial.name %> каб. <%= object.user.cabinet %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <%= object.user.filial.address %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <%= object.user.phone %>
+            </div>
+          </div>
         <% end %>
     </td>
   <% end %>
