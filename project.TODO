@@ -25,6 +25,7 @@ ICRB Project:
             http://getbootstrap.com/javascript/#buttons
         ☐ disable morris chart on env:production #TEMP
         ☐ problem_table <tr> markup with div.row, not <span>
+        ☐ replace problem table with bootstrap/collapse
       --- ✄ -----------------------
 
       Visual:

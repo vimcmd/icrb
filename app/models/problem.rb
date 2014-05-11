@@ -15,7 +15,7 @@ class Problem < ActiveRecord::Base
   attr_accessible :content, :admin_comment, :status_id
   belongs_to :user
 
-  validates :content, presence: true, length: { maximum: 80 }
+  validates :content, presence: true, length: { maximum: 250 }
   validates :admin_comment, length: { maximum: 80 }
   validates :user_id, presence: true
 

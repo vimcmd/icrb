@@ -1,15 +1,15 @@
 // @import "bootstrap";
 
-.problem-add {
-  margin-bottom: 20px;
-
-  h6 {
+h6 {
     font-family  : 'Open Sans', sans-serif;
-    font-size    : 14px;
+    font-size    : 16px;
     font-weight  : 600;
     margin-bottom: 10px;
     margin-top   : 10px;
   }
+
+.problem-add {
+  margin-bottom: 20px;
 
   p {
     // color: #777e86;
@@ -21,21 +21,31 @@
     margin     : 0 0 10px;
     position   : relative;
     top        : 5px;
-
   }
 
   textarea {
     background   : #fff;
     border-color : #dee3ea;
     font-size    : 13px;
-    height       : 80px;
+    height       : 100px;
     margin-bottom: 0px;
     padding      : 5px 7px 5px 7px;
     width        : 100%;
   }
+  select {
+    border-radius: 2px;
+    display      : inline-block;
+    font-weight  : 500;
+    margin-bottom: 10px;
+    width        : 49.5%;
+  }
   .btn-glow.primary {
     margin-top: 15px;
   }
+}
+
+select {
+  -webkit-appearance: none;
 }
 
 .field_with_errors {
@@ -112,11 +122,11 @@
 .countdown {
   // display: inline;
   background-color: #DEE3EA;
-  border-radius   : 4px 4px 0 0;
+  border-radius   : 0px 0px 4px 4px;
   color           : #526273;
-  padding         : 2px 7px 0px 7px;
-  text-align      : left;
-  width           : 95px;
+  padding         : 2px 7px 2px 7px;
+  text-align      : center;
+  width           : 100px;
 }
 
 //BORDERS
@@ -141,14 +151,67 @@
   z-index      : 9999;
 }
 
-//admin comment
-.adm-controls {
-  display: none;
+// panels
+.panel-default {
+  border: 1px solid #cfdde8;
+  // border-color: #d0dde9;
+  color: #737f8d;
+  .panel-heading {
+    background-color: #f2f5f9;
+  }
+}
 
+.panel-title {
+  .type {
+    color          : #29323d;
+    font-size      : 16px;
+    font-style     : normal;
+    text-align     : left;
+  }
+  .sender {
+    font-size      : 14px;
+    font-style     : normal;
+    font-weight    : 600;
+    text-align     : left;
+    a {
+      font-weight    : 600;
+    }
+  }
+  .date {
+    text-align: center;
+    color     : #778391;
+    font-size : 13px;
+  }
+  .status {
+    text-align: center;
+    i {
+      color: #95a8b7;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
 }
-.adm-comm:hover .adm-controls{
-  display: inline-block;
+.panel-body {
+  .problem-message {
+    color: #516372;
+    font-size: 14px;
+  }
 }
 
-.adm-comm {
+// tooltip
+.tooltip {
+  .tooltip-inner {
+    // box-shadow   : 0px 0px 9px 0px #d6d6d6;
+    background-color: #fff;
+    border-radius   : 5px;
+    border          : 1px solid #cccccc;
+    color           : #778391;
+    font-size       : 13px;
+    font-style      : italic;
+    font-weight     : 600;
+
+  }
 }
+  .tooltip.top .tooltip-arrow {
+    border-top-color: #cccccc;
+  }

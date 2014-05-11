@@ -1,0 +1,60 @@
+<div class="panel-group" id="accordion" style="margin-bottom:10px;">
+  <div class="panel panel-default">
+    <!-- heading -->
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#<%= object.id %>">
+          <div class="row">
+            <div class="col-md-4 type">
+              <%= object.content %>
+            </div>
+            <div class="col-md-4 sender">
+              <% if params[:action] == 'all' %>
+                <%= link_to object.user.name, object.user, class: "name" %>
+              <% end %>
+            </div>
+            <div class="col-md-2 date" data-toggle="tooltip" data-placement="top" title="<%= l((object.created_at.in_time_zone('Ekaterinburg')), format: '%a, %e %b %Y :: %H:%M') %>">
+              <%= time_ago_in_words(object.created_at) %> <%= t(:problem_ago) %>
+            </div>
+            <div class="col-md-2 status">
+              <%= render 'shared/problem_status', object: object %>
+              <% if current_user?(object.user) %>
+                <!-- delete my message button -->
+                  <%= link_to object, method: :delete, data: { confirm: t(:problem_cancel_shure), title: object.content }, class: "pull-right" do %>
+                    <i class="fa fa-times"></i>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+        </a>
+      </h4>
+    </div>
+    <!-- body -->
+    <div id="<%= object.id %>" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="row">
+          <!-- content -->
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-12 problem-message">
+                <%= object.content %>
+              </div>
+            </div>
+          </div>
+          <!-- address -->
+          <div class="col-md-4">
+            <% if params[:action] == 'all'%>
+              <%= render 'shared/user_info', object: object.user %>
+            <% end %>
+          </div>
+          <!-- admin comment -->
+          <% if current_user.admin? %>
+            <div class="col-md-4">
+              <%= render 'shared/problem_comment' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

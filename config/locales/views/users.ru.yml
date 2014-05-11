@@ -21,6 +21,7 @@ ru:
   user_restricted: "Отказано в доступе. Пожалуйста свяжитесь с системным администратором."
   user_make_admin: "сделать админом"
   user_blank: "- пусто -"
+  user_problems: "Заявки пользователя"
 
   #Profile
   profile_view: "мой профиль"

@@ -4,8 +4,20 @@
 
 <%= form_for(@problem) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <!-- <div class="countdown"></div> -->
-  <%= f.text_area :content, placeholder: t(:problem_input) %>
+  <select name="problem_type_main" id="" class="ui-select" >
+    <option selected value="">Тип проблемы</option>
+    <option value=""></option>
+  </select>
+  <select name="problem_type_sub" id="" class="ui-select pull-right" >
+    <option selected value="">уточните</option>
+    <option value=""></option>
+  </select>
+
+  <%= f.text_area :content, placeholder: t(:problem_input), onkeyup: "countChar(this);" %>
+
+  <div id="countdown" class="countdown pull-right">250 символов</div>
+
+  <!-- replace with select_tag -->
   <%= f.submit t(:problem_send_btn), class: "btn-glow primary" %>
 <% end %>
 
@@ -14,4 +26,15 @@
   <i class="fa fa-lightbulb-o"></i>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, perferendis, repellat neque reprehenderit nobis recusandae ea sint qui consequuntur veniam ut sapiente vitae suscipit amet atque molestias tempora deserunt minima?
 </div>
+
+<script>
+  function countChar(val) {
+    var len = val.value.length;
+    if (len >= 250) {
+      val.value = val.value.substring(0, 249);
+    } else {
+      $('#countdown').text(250 - len + ' символов');
+    }
+  };
+</script>
 

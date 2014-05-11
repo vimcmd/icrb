@@ -12,12 +12,13 @@ h1,h2,h3,h4,h5,h6{
 .label, .badge {
 	font-weight: lighter;
 	font-size: 90%;
+	font-style: normal;
 }
 .label-success, .badge-success {
-	background-color: rgb(129, 189, 130);
+	background-color: rgb(129, 189, 130) !important;
 }
 .label-info, .badge-info {
-	background-color: rgb(104, 163, 213);
+	background-color: rgb(104, 163, 213) !important;
 }
 .label-warning, .badge-warning {
 	background-color: #fcf8e3;

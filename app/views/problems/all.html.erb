@@ -1,10 +1,9 @@
 <% if current_user.admin? %>
   <% provide(:title, t(:problem_all)) %>
   <div id="pad-wrapper">
-    <div class="table-wrapper">
 
       <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
-        <h3><%= t(:problem_all) %></h3>
+        <h3><%= t(:problem_income) %></h3>
         <!-- DUMMY search elements -->
           <div class="pull-right">
                     <div class="btn-group pull-right">
@@ -17,40 +16,30 @@
       </div>
 
       <div class="row">
-        <div class="col-md-12">
 
-        <!-- new problems -->
-          <table class="table table-hover">
+          <% @problem_new.each do |p| %>
+            <%= render 'shared/problem_element', object: p %>
+          <% end %>
           <%= will_paginate @problem_new %>
-          <!-- thead -->
-            <%= render 'shared/problem_table_head' %>
-
-            <!-- tbody -->
-            <tbody>
-              <% @problem_new.each do |p| %>
-                <%= render 'shared/problem_table_row', object: p %>
-              <% end %>
-            </tbody>
 
 
-          </table>
-          <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
-            <h3><%= t(:problem_finished) %></h3>
-          </div>
-        <!-- completed or aborted problems -->
-          <table class="table table-hover">
-            <!-- tbody -->
-            <tbody>
-              <% @problem_completed.each do |p| %>
-                <%= render 'shared/problem_table_row', object: p %>
-              <% end %>
-            </tbody>
 
-          </table>
-          <%= will_paginate @problem_completed %>
-        </div>
+
+
       </div>
-    </div>
+
+      <div class="row header" style="background: none; box-shadow: none; padding: 0px; margin-bottom: 20px; display: block; height: 34px">
+        <h3><%= t(:problem_finished) %></h3>
+      </div>
+
+      <div class="row">
+
+          <% @problem_completed.each do |p| %>
+            <%= render 'shared/problem_element', object: p %>
+          <% end %>
+          <%= will_paginate @problem_completed %>
+      </div>
+
   </div>
 <% else %>
 

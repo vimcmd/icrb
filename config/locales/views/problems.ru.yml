@@ -1,12 +1,14 @@
   ru:
     #Problems
     problem_all: "Все заявки"
+    problem_income: "Новые"
     problem_finished: "Выполненные"
     problem_content: "Описание проблемы"
     problem_status: "Статус"
     problem_date: "Время подачи"
     problem_send: "Заявка отправлена"
     problem_cancel: "Заявка отменена"
+    problem_cancel_shure: "Отменить заявку?"
     problem_sended: "отправлено "
     problem_send_btn: "Отправить"
     problem_comment: "Пометка "

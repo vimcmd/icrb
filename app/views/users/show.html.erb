@@ -1,18 +1,15 @@
 <% provide( :title, @user.name ) %>
 <div id="pad-wrapper">
-  <%= render 'shared/user_info', object: @user %>
-
-  <table class="table table-hover">
+  <div class="row">
+    <div class="col-md-6">
+      <%= render 'shared/user_info', object: @user %>
+    </div>
+  </div>
+  <h3> <%= t( :user_problems ) %> (<%= @current_user_problems.count %>) </h3>
+  <% @current_user_problems.each do |p| %>
+    <%= render 'shared/problem_element', object: p %>
+  <% end %>
   <%= will_paginate @current_user_problems %>
-    <%= render 'shared/problem_table_head' %>
-
-    <tbody>
-      <% @current_user_problems.each do |p| %>
-        <%= render 'shared/problem_table_row', object: p %>
-      <% end %>
-    </tbody>
-
-  </table>
 
 
 <% if current_user.admin? %>

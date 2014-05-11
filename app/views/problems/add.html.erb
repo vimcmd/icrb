@@ -3,8 +3,12 @@
   <% if signed_in? && current_user %>
 
     <div id="pad-wrapper">
+      <div class="row">
+        <div class="col-md-6">
+          <%= render 'shared/user_info', object: current_user %>
+        </div>
+      </div>
 
-      <%= render 'shared/user_info', object: current_user %>
 
 
       <div class="row">
@@ -13,15 +17,11 @@
         </div>
 
         <div class="col-md-7">
-          <h3> <%= t( :problem_my_list ) %> (<%= @current_user_problems.count %>) </h3>
-          <table class="table table-hover">
-            <%= render 'shared/problem_table_head' %>
-            <tbody>
-              <% @current_user_problems.each do |p| %>
-                <%= render 'shared/problem_table_row', object: p %>
-              <% end %>
-            </tbody>
-          </table>
+          <h6> <%= t( :problem_my_list ) %> (<%= @current_user_problems.count %>) </h6>
+          <% @current_user_problems.each do |p| %>
+            <%= render 'shared/problem_element', object: p %>
+          <% end %>
+
           <%= will_paginate @current_user_problems %>
         </div>
       </div>
