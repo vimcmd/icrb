@@ -18,6 +18,7 @@ ICRB Project:
         ☐ user can see only self problems (restrict url /users/id)
         ☐ replace in user model admin:boolean to role:int ?
         ☐ move inline html styles to css
+        ☐ users/edit profile split fileds and password, and add 2 buttons save
       --- ✄ -----------------------
 
       Visual:

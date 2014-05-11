@@ -21,7 +21,7 @@
               <%= render 'shared/problem_status', object: object %>
               <% if current_user?(object.user) %>
                 <!-- delete my message button -->
-                  <%= link_to object, method: :delete, data: { confirm: t(:problem_cancel_shure), title: object.content }, class: "pull-right" do %>
+                  <%= link_to object, method: :delete, data: { confirm: t(:problem_cancel_shure), title: object.content }, class: "pull-right buttons" do %>
                     <i class="fa fa-times"></i>
                   <% end %>
               <% end %>

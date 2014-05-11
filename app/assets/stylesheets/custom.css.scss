@@ -194,6 +194,10 @@ select {
       font-size: 20px;
       cursor: pointer;
     }
+    .buttons {
+        position: absolute !important;
+        right: 15px !important;
+    }
   }
 }
 .panel-body {
