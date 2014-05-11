@@ -55,11 +55,12 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       flash[:success] = t(:profile_updated)
       sign_in @user
-      redirect_to :back
+      render 'edit'
+      # redirect_to :back
       # redirect_to @user
     else
-      # render 'edit'
-      redirect_to :back
+      render 'edit'
+      # redirect_to :back
     end
   end
 

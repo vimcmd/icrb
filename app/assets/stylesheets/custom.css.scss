@@ -26,6 +26,7 @@ h6 {
   textarea {
     background   : #fff;
     border-color : #dee3ea;
+    border-radius: 5px;
     font-size    : 13px;
     height       : 100px;
     margin-bottom: 0px;
@@ -33,7 +34,7 @@ h6 {
     width        : 100%;
   }
   select {
-    border-radius: 2px;
+    border-radius: 5px;
     display      : inline-block;
     font-weight  : 500;
     margin-bottom: 10px;
@@ -52,7 +53,8 @@ select {
   // border: 1px solid #c73939;
   // box-shadow: 0 0 1px rgba(185, 74, 72, 0.7);
 
-  box-shadow: 0px 0px 0px 1px #c73939;
+  border-radius: 4px;
+  box-shadow   : 0px 0px 0px 1px #c73939;
 }
 
 // NAVBAR
