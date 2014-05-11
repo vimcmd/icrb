@@ -18,10 +18,6 @@ ICRB Project:
         ☐ user can see only self problems (restrict url /users/id)
         ☐ replace in user model admin:boolean to role:int ?
         ☐ move inline html styles to css
-        ☐ disable multiple submit
-            f.submit disable_with: t(:problem_send_wait),
-              http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link
-              http://getbootstrap.com/javascript/#buttons
       --- ✄ -----------------------
 
       Visual:
@@ -43,6 +39,10 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ disable multiple submit @done (14-05-12 01:12) @project(ICRB Project / Changes / bugs / refactor)
+  f.submit disable_with: t(:problem_send_wait),
+  http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link
+  http://getbootstrap.com/javascript/#buttons
  ✔ morris chart #statistics @done (14-05-12 00:34) @project(ICRB Project / Visual)
  ✔ flash. helper for add fa.icons @done (14-05-12 00:33) @project(ICRB Project / Visual)
  ✔ replace problem table with bootstrap/collapse @done (14-05-12 00:33) @project(ICRB Project / Changes / bugs / refactor)
