@@ -5,11 +5,12 @@ class ProblemsController < ApplicationController
 
   def create
     begin
+      @current_user_problems = Problem.where("user_id = ?", current_user.id).paginate( page: params[:page], per_page: 10, )
       @problem = current_user.problems.build(params[:problem])
       if @problem.save
         flash[:success] = t(:problem_send)
         # flash[:info] = t(:problem_send)
-        redirect_to :back
+        redirect_to problems_add_path
       else
         @feed_items = []
         render 'problems/add'
@@ -34,6 +35,15 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def update
+    @problem = Problem.find(params[:id])
+      if @problem.update_attributes(params[:problem])
+        redirect_to :back
+      else
+        redirect_to :back
+      end
+  end
+
   def add
     if (!current_user.filial.blank? && !current_user.cabinet.blank?)
       if signed_in?
@@ -49,12 +59,16 @@ class ProblemsController < ApplicationController
   end
 
   def all
-    if current_user.admin?
-      @problem_new = Problem.where("status_id = ?  OR status_id = ?", 0, 3).paginate( page: params[:page], per_page: 5, )
-      @problem_completed = Problem.where("status_id = ? OR status_id = ?", 1, 2).paginate( page: params[:page], per_page: 5, )
-    else
-      flash[:warning] = t( :user_restricted )
-      redirect_to signin_path
+    begin
+      if current_user.admin?
+        @problem_new = Problem.where("status_id = ?  OR status_id = ?", 0, 3).paginate( page: params[:page], per_page: 5, )
+        @problem_completed = Problem.where("status_id = ? OR status_id = ?", 1, 2).paginate( page: params[:page], per_page: 5, )
+      else
+        flash[:warning] = t( :user_restricted )
+        redirect_to signin_path
+      end
+    rescue
+      redirect_to :back
     end
   end
 
@@ -66,7 +80,6 @@ class ProblemsController < ApplicationController
       flash[:warning] = t( :user_restricted )
       redirect_to signin_path
     end
-
   end
 
   private

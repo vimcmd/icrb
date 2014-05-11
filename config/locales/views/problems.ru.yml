@@ -25,6 +25,7 @@
     problem_aborted: "Отказано"
     problem_waiting: "Ожидание"
     problem_cant_cancel: "Заявка внесена в журнал и не может быть отменена"
+    problem_admin_comment: "Добавить комментарий"
 
     # Table labels
     problem_label_content: "Содержание"

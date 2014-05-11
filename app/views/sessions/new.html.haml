@@ -10,4 +10,4 @@
           = f.text_field :login,        :class => 'form-control', :placeholder => t(:login)
           = f.password_field :password, :class => 'form-control', :placeholder => t(:password)
           .action
-            = f.submit t(:sign_in), class: "btn btn-glow btn-primary primary signup"
+            = f.submit t(:sign_in), disable_with: t(:send_wait), class: "btn btn-glow btn-primary primary signup"

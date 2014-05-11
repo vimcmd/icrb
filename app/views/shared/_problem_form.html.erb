@@ -18,7 +18,7 @@
   <div id="countdown" class="countdown pull-right">250 символов</div>
 
   <!-- replace with select_tag -->
-  <%= f.submit t(:problem_send_btn), class: "btn-glow primary" %>
+  <%= f.submit t(:problem_send_btn), action: 'add', disable_with: t(:send_wait), class: "btn-glow primary" %>
 <% end %>
 
 <br>

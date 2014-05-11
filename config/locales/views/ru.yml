@@ -1,5 +1,7 @@
 ru:
   hello_world: "Привет!"
+  send_wait: "Подождите..."
+  send_wait_short: "..."
 
 
 

@@ -2,8 +2,7 @@ ICRB Project:
 
       1st priority:
         ☐ problem statistics
-        ☐ admin selector for problem status (submit onchange?)
-        ☐ admin note for problems
+        ☐ admin selector for problem status
         --- ✄ -----------------------
 
       Main functional:
@@ -17,29 +16,21 @@ ICRB Project:
         ☐ admin add news to main page
         ☐ announcements (railscasts pro 103)
         ☐ user can see only self problems (restrict url /users/id)
-        ☐ display exact date on hover approx time
         ☐ replace in user model admin:boolean to role:int ?
         ☐ move inline html styles to css
         ☐ disable multiple submit
-            http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link
-            http://getbootstrap.com/javascript/#buttons
-        ☐ disable morris chart on env:production #TEMP
-        ☐ problem_table <tr> markup with div.row, not <span>
-        ☐ replace problem table with bootstrap/collapse
+            f.submit disable_with: t(:problem_send_wait),
+              http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link
+              http://getbootstrap.com/javascript/#buttons
       --- ✄ -----------------------
 
       Visual:
-        ☐ problem link RED color
         ☐ instructions under send problem #DUMMY
         ☐ instructions in profile settings #DUMMY
-        ☐ my problem list under send && instructions on right
         ☐ sidebar toggler always visible
         ☐ admin phones on problem page
-        ☐ message symbols countdown (exclude asset from dev?)
         ☐ dropdown style like pop-dialog
-        ☐ flash. helper for add fa.icons
-        ☐ morris chart #statistics
-        ☐ replace profile dropdown with two row fields
+        ☐ replace profile dropdown with two text fields
     --- ✄ -----------------------
 
       I18n:
@@ -52,6 +43,13 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ morris chart #statistics @done (14-05-12 00:34) @project(ICRB Project / Visual)
+ ✔ flash. helper for add fa.icons @done (14-05-12 00:33) @project(ICRB Project / Visual)
+ ✔ replace problem table with bootstrap/collapse @done (14-05-12 00:33) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ message symbols countdown (exclude asset from dev?) @done (14-05-12 00:33) @project(ICRB Project / Visual)
+ ✔ display exact date on hover approx time @done (14-05-12 00:32) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ problem_table <tr> markup with div.row, not <span> @done (14-05-12 00:01) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ admin note for problems @done (14-05-12 00:00) @project(ICRB Project / 1st priority)
  ✔ fill profile before send problem @done (14-05-09 22:19) @project(ICRB Project / Main functional)
  ✔ same look tables @done (14-05-09 22:18) @project(ICRB Project / Changes / bugs / refactor)
  ✔ split completed problems @done (14-05-09 20:20) @project(ICRB Project / 1st priority)

@@ -17,7 +17,7 @@
         </div>
 
         <div class="col-md-7">
-          <h6> <%= t( :problem_my_list ) %> (<%= @current_user_problems.count %>) </h6>
+          <h6> <%= t( :problem_my_list ) %> (<%= @current_user_problems.try(:count) %>) </h6>
           <% @current_user_problems.each do |p| %>
             <%= render 'shared/problem_element', object: p %>
           <% end %>

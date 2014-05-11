@@ -17,7 +17,7 @@ module ProblemsHelper
     end
   end
 
-  def chart_test
+  def chart_heroku
     Time.zone = 'Ekaterinburg'
     (1.month.ago.to_date..Date.today).map do |date|
       {

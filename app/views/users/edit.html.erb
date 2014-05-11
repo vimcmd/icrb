@@ -66,7 +66,7 @@
         </div>
 
         <div class="action">
-          <%= f.submit t(:save_changes), class: "btn btn-glow btn-primary primary signup", style:'margin-left:15px;' %>
+          <%= f.submit t(:save_changes), disable_with: t(:send_wait) ,class: "btn btn-glow btn-primary primary signup", style:'margin-left:15px;' %>
         </div>
       </div>
       <% end %>

@@ -18,7 +18,7 @@
           .action
             %p{style: "color: #7d91a8; font-weight: 600;"}
               = t(:only_for)
-            = f.submit t(:create), class: "btn btn-glow btn-primary primary signup"
+            = f.submit t(:create), disable_with: t(:send_wait), class: "btn btn-glow btn-primary primary signup"
     .already
       %p Already have an account?
       %a{href: "#"} Sign in
