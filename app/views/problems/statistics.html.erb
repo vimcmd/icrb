@@ -1,15 +1,18 @@
-<% provide(:title, t(:stat)) %>
-<div id="pad-wrapper">
-  <%= content_tag :div, "", id: "statistics", data: { chart: chart_test } %>
+<% if current_user.admin? %>
+  <% provide(:title, t(:stat)) %>
+  <div id="pad-wrapper">
+    <!-- not efficient special for heroku,
+    replace {chart: chart_test} with {chart: chart_data}  -->
+    <%= content_tag :div, "", id: "statistics", data: { chart: chart_test } %>
 
-  <script type="text/coffeescript">
-    jQuery ->
-      new Morris.Line(
-        element: "statistics"
-        data: $('#statistics').data('chart')
-        xkey: "created_at"
-        ykeys: ['problems_total']
-        labels: ['Problems']
-      )
-  </script>
-</div>
+    <script type="text/coffeescript">
+      jQuery ->
+        Morris.Line
+          element: "statistics"
+          data: $('#statistics').data('chart')
+          xkey: "created_at"
+          ykeys: ['users_registered', 'problems_total', 'problems_comleted']
+          labels: ['Новых пользователей', 'Заявок всего', 'Рассмотрено']
+    </script>
+  </div>
+<% end %>

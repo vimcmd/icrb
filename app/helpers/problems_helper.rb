@@ -18,10 +18,13 @@ module ProblemsHelper
   end
 
   def chart_test
-    ( 1.month.ago.to_date..Date.today ).map do |date|
+    Time.zone = 'Ekaterinburg'
+    (1.month.ago.to_date..Date.today).map do |date|
       {
-        created_at: date,
-        problems_total: Problem.where( "date(created_at) = ?", date ).try(:count) || 0
+        created_at: date.to_time_in_current_zone.strftime('%Y-%m-%d'),
+        problems_total: Problem.where( "date(created_at) = ?", date ).try(:count) || 0,
+        problems_comleted: Problem.where( "date(created_at) = ?", date ).where( "status_id != ?", '0' ).try(:count) || 0,
+        users_registered: User.where( "date(created_at) = ?", date ).try(:count) || 0,
        }
     end
   end
