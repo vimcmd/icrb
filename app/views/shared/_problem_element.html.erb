@@ -5,7 +5,13 @@
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#<%= object.id %>">
           <div class="row">
-            <div class="col-md-4 type">
+            <% if params[:action] == 'add'
+              problem_type_width = 8
+            else
+              problem_type_width = 4
+            end %>
+
+            <div class="col-md-<%= problem_type_width.to_s %> type">
               <i class="fa fa-chevron-down" style="color:#95a8b7; padding-right: 15px;"></i>
 
               <!-- replace with problem type -->
@@ -45,27 +51,17 @@
 
 
           <% if params[:action] == 'add'
-            content_size = 12
+            problem_message_width = 12
           else
-            content_size = 4
+            problem_message_width = 4
           end %>
-
-          <div class="col-md-<%= content_size.to_s %>">
+          <!-- problem message -->
+          <div class="col-md-<%= problem_message_width.to_s %>">
             <div class="row">
               <div class="col-md-12 problem-message">
                 <%= object.content %>
               </div>
             </div>
-            <% if !object.admin_comment.blank? %>
-              <div class="row" style="margin-top:10px">
-                <div class="col-md-12">
-                  <div class="alert alert-info" style="margin-bottom:0px;">
-                    <i class="fa fa-lightbulb-o"></i>
-                    <%= object.admin_comment %>
-                  </div>
-                </div>
-              </div>
-            <% end %>
           </div>
 
           <!-- address -->
@@ -76,15 +72,32 @@
           </div>
         </div>
 
-          <!-- admin comment -->
-          <div class="row">
-            <div class="col-md-12">
+        <!-- admin  -->
+          <div class="row" style="margin-top:10px">
+            <!-- admin message -->
+            <% if params[:action] == 'add'
+              admin_comment_width = 12
+            else
+              admin_comment_width = 6
+            end %>
+            <% if !object.admin_comment.blank? %>
+              <div class="col-md-<%= admin_comment_width.to_s %>">
+                <div class="alert alert-info" style="margin-bottom:0px;">
+                  <i class="fa fa-lightbulb-o"></i>
+                  <%= object.admin_comment %>
+                </div>
+              </div>
+              <br>
+            <% end %>
+
+            <!-- admin message controls -->
+            <div class="col-md-6">
               <% if (current_user.admin? && params[:action] != 'add' && params[:action] != 'create') %>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="btn-group" style="width:100%">
                       <%= form_for(object) do |f| %>
-                        <%= f.text_field :admin_comment, placeholder: t(:problem_admin_comment), class: "form-control", style: "float:left; width:70%; display: inline-block; border-radius: 5px 0px 0px 5px;" %>
+                        <%= f.text_field :admin_comment, placeholder: t(:problem_admin_comment), class: "form-control", style: "float:left; width:69%; display: inline-block; border-radius: 5px 0px 0px 5px;" %>
 
                         <!-- DUMMY -->
                         <select name="" id="" class="ui-select adm-comm" style="width: 20%; display: inline-block; float:left;height: 34px; font-weight:500; border-radius: 0px; -webkit-appearance: none;">
@@ -94,7 +107,7 @@
                           <option value="0">Сброс</option>
                         </select>
 
-                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "width: 10%; display: inline-block;height: 34px;border-left-width: -1px;" %>
+                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "display: inline-block;height: 34px;border-left-width: -1px;" %>
                       <% end %>
                     </div>
                   </div>
@@ -102,6 +115,7 @@
               <% end %>
             </div>
           </div>
+      <!-- end admin -->
       </div>
     </div>
   </div>
