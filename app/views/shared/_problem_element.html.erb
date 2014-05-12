@@ -42,7 +42,15 @@
       <div class="panel-body">
         <div class="row">
           <!-- content -->
-          <div class="col-md-4">
+
+
+          <% if params[:action] == 'add'
+            content_size = 12
+          else
+            content_size = 4
+          end %>
+
+          <div class="col-md-<%= content_size.to_s %>">
             <div class="row">
               <div class="col-md-12 problem-message">
                 <%= object.content %>
@@ -59,14 +67,18 @@
               </div>
             <% end %>
           </div>
+
           <!-- address -->
-          <div class="col-md-4">
+          <div class="col-md-8">
             <% if params[:action] == 'all'%>
               <%= render 'shared/user_info', object: object.user %>
             <% end %>
           </div>
+        </div>
+
           <!-- admin comment -->
-            <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
               <% if (current_user.admin? && params[:action] != 'add' && params[:action] != 'create') %>
                 <div class="row">
                   <div class="col-md-12">
@@ -82,14 +94,14 @@
                           <option value="0">Сброс</option>
                         </select>
 
-                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "display: inline-block;height: 34px;border-left-width: -1px;" %>
+                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "width: 10%; display: inline-block;height: 34px;border-left-width: -1px;" %>
                       <% end %>
                     </div>
                   </div>
                 </div>
               <% end %>
+            </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
