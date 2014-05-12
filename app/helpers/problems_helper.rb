@@ -30,6 +30,7 @@ module ProblemsHelper
   end
 
   def problems_new_count
+    Time.zone = 'Ekaterinburg'
     Problem.new_problems(1.week.ago) || 0
   end
 end

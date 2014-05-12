@@ -31,6 +31,7 @@ class Problem < ActiveRecord::Base
 
   #sidebar new problems count in span
   def self.new_problems(start)
+    Time.zone = 'Ekaterinburg'
     problems = where(created_at: start.beginning_of_day..Time.zone.now)
     problems = problems.where("status_id = ?", 0).count
     # problems = problems.group("id")
