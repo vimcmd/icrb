@@ -16,7 +16,7 @@
 
               <!-- replace with problem type -->
               <% if object.content.split(" ").count > 5 %>
-                <%= object.content.split(" ").first(5).join(" ") %> ...
+                <%= object.content.split(" ").first(5).join(" ") %> <span style="color:#428bca;font-weight: 900;">. . .</span>
               <% else %>
                 <%= object.content %>
               <% end %>
@@ -50,7 +50,7 @@
           <!-- content -->
 
 
-          <% if params[:action] == 'add'
+          <% if params[:action] != 'all'
             problem_message_width = 12
           else
             problem_message_width = 4
@@ -95,9 +95,9 @@
               <% if (current_user.admin? && params[:action] != 'add' && params[:action] != 'create') %>
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="btn-group" style="width:100%">
+                    <div class="btn-group" style="width:101%">
                       <%= form_for(object) do |f| %>
-                        <%= f.text_field :admin_comment, placeholder: t(:problem_admin_comment), class: "form-control", style: "float:left; width:69%; display: inline-block; border-radius: 5px 0px 0px 5px;" %>
+                        <%= f.text_field :admin_comment, placeholder: t(:problem_admin_comment), class: "form-control", style: "float:left; width:70%; display: inline-block; border-radius: 5px 0px 0px 5px;" %>
 
                         <!-- DUMMY -->
                         <select name="" id="" class="ui-select adm-comm" style="width: 20%; display: inline-block; float:left;height: 34px; font-weight:500; border-radius: 0px; -webkit-appearance: none;">
@@ -107,7 +107,7 @@
                           <option value="0">Сброс</option>
                         </select>
 
-                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "display: inline-block;height: 34px;border-left-width: -1px;" %>
+                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "width:9%; display: inline-block;height: 34px;border-left-width: -1px;" %>
                       <% end %>
                     </div>
                   </div>
