@@ -8,15 +8,14 @@ ICRB Project:
 
       Main functional:
         ☐ admin add && remove regcode to db
+        ☐ admin add news to main page
         ☐ admin online (icon)
         ☐ filter for problems #DUMMY (by date, by type etc.)
             http://railscasts.com/episodes/228-sortable-table-columns?view=asciicast
 
       Changes / bugs / refactor:
         ☐ create news posted by admin on main page for all
-        ☐ admin add news to main page
         ☐ announcements (railscasts pro 103)
-        ☐ user can see only self problems (restrict url /users/id)
         ☐ replace in user model admin:boolean to role:int ?
         ☐ move inline html styles to css
         ☐ users/edit profile split fileds and password, and add 2 buttons save
@@ -41,6 +40,8 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ exclude user login update @done (14-05-13 17:21) @project(ICRB Project / Changes / bugs / refactor)
+ ✔ user can see only self problems (restrict url /users/id) @done (14-05-13 17:09) @project(ICRB Project / Changes / bugs / refactor)
  ✔ disable multiple submit @done (14-05-12 01:12) @project(ICRB Project / Changes / bugs / refactor)
   f.submit disable_with: t(:problem_send_wait),
   http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link

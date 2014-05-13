@@ -1,4 +1,4 @@
-<div class="panel-group" id="accordion" style="margin-bottom:10px;">
+<div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <!-- heading -->
     <div class="panel-heading">
@@ -12,11 +12,11 @@
             end %>
 
             <div class="col-md-<%= problem_type_width.to_s %> type">
-              <i class="fa fa-chevron-down" style="color:#95a8b7; padding-right: 15px;"></i>
+              <i class="fa fa-chevron-down"></i>
 
               <!-- replace with problem type -->
               <% if object.content.split(" ").count > 5 %>
-                <%= object.content.split(" ").first(5).join(" ") %> <span style="color:#428bca;font-weight: 900;">. . .</span>
+                <%= object.content.split(" ").first(5).join(" ") %> <span>. . .</span>
               <% else %>
                 <%= object.content %>
               <% end %>
@@ -73,48 +73,48 @@
         </div>
 
         <!-- admin  -->
-          <div class="row" style="margin-top:10px">
-            <!-- admin message -->
-            <% if params[:action] == 'add'
-              admin_comment_width = 12
-            else
-              admin_comment_width = 6
-            end %>
-            <% if !object.admin_comment.blank? %>
-              <div class="col-md-<%= admin_comment_width.to_s %>">
-                <div class="alert alert-info" style="margin-bottom:0px;">
-                  <i class="fa fa-lightbulb-o"></i>
-                  <%= object.admin_comment %>
-                </div>
+        <div class="row admin-controls">
+          <!-- admin message -->
+          <% if params[:action] == 'add'
+            admin_comment_width = 12
+          else
+            admin_comment_width = 6
+          end %>
+          <% if !object.admin_comment.blank? %>
+            <div class="col-md-<%= admin_comment_width.to_s %>">
+              <div class="alert alert-info">
+                <i class="fa fa-lightbulb-o"></i>
+                <%= object.admin_comment %>
               </div>
-              <br>
-            <% end %>
+            </div>
+            <br>
+          <% end %>
 
-            <!-- admin message controls -->
-            <div class="col-md-6">
-              <% if (current_user.admin? && params[:action] != 'add' && params[:action] != 'create') %>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="btn-group" style="width:101%">
-                      <%= form_for(object) do |f| %>
-                        <%= f.text_field :admin_comment, placeholder: t(:problem_admin_comment), class: "form-control", style: "float:left; width:70%; display: inline-block; border-radius: 5px 0px 0px 5px;" %>
+          <!-- admin message controls -->
+          <div class="col-md-6">
+            <% if (current_user.admin? && params[:action] != 'add' && params[:action] != 'create') %>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group">
+                    <%= form_for(object) do |f| %>
+                      <%= f.text_field :admin_comment, placeholder: t(:problem_admin_comment), class: "form-control admin-commentary" %>
 
-                        <!-- DUMMY -->
-                        <select name="" id="" class="ui-select adm-comm" style="width: 20%; display: inline-block; float:left;height: 34px; font-weight:500; border-radius: 0px; -webkit-appearance: none;">
-                          <option value="1" selected="selected">Выполнено</option>
-                          <option value="2">Отказано</option>
-                          <option value="3">Ожидание</option>
-                          <option value="0">Сброс</option>
-                        </select>
+                      <!-- DUMMY -->
+                      <select name="" id="" class="ui-select admin-type">
+                        <option value="1" selected="selected">Выполнено</option>
+                        <option value="2">Отказано</option>
+                        <option value="3">Ожидание</option>
+                        <option value="0">Сброс</option>
+                      </select>
 
-                        <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right", style: "width:9%; display: inline-block;height: 34px;border-left-width: -1px;" %>
-                      <% end %>
-                    </div>
+                      <%= f.submit "OK", disable_with: t(:send_wait_short), action: 'update', class: "glow right admin-button" %>
+                    <% end %>
                   </div>
                 </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
+        </div>
       <!-- end admin -->
       </div>
     </div>

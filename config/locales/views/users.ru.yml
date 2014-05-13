@@ -28,7 +28,7 @@ ru:
   select_filial: "ваш филиал:"
   select_cabinet: "ваш кабинет"
   select_phone: "телефон в кабинете или личный"
-  select_password: "пароль"
+  select_password: "новый или текущий пароль"
   select_password_confirmation: "подтверждение пароля"
   select_name: "ФИО"
   profile_instructions: "Обязательно заполните профиль"

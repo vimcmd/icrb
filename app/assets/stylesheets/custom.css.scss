@@ -67,6 +67,15 @@ select {
     }
   }
 }
+.navbar-brand {
+  color: #DDDDDD !important;
+  span {
+    font-size     : 12px;
+    font-style    : italic;
+    text-transform: lowercase;
+    vertical-align: sub;
+  }
+}
 
 .table {
   td {
@@ -156,7 +165,20 @@ select {
   z-index      : 9999;
 }
 
-// panels
+
+//                                     dP
+//                                     88
+// 88d888b. .d8888b. 88d888b. .d8888b. 88 .d8888b.
+// 88'  `88 88'  `88 88'  `88 88ooood8 88 Y8ooooo.
+// 88.  .88 88.  .88 88    88 88.  ... 88       88
+// 88Y888P' `88888P8 dP    dP `88888P' dP `88888P'
+// 88
+// dP
+
+.panel-group {
+  margin-bottom: 10px;
+}
+
 .panel-default {
   border: 1px solid #cfdde8;
   // border-color: #d0dde9;
@@ -172,6 +194,14 @@ select {
     font-size      : 16px;
     font-style     : normal;
     text-align     : left;
+    i {
+      color: #95a8b7;
+      padding-right: 15px;
+    }
+    span {
+      color:#428bca;
+      font-weight: 900;
+    }
   }
   .sender {
     font-size      : 14px;
@@ -190,13 +220,13 @@ select {
   .status {
     text-align: center;
     i {
-      color: #95a8b7;
+      color    : #95a8b7;
       font-size: 20px;
-      cursor: pointer;
+      cursor   : pointer;
     }
     .buttons {
         position: absolute !important;
-        right: 15px !important;
+        right   : 15px !important;
     }
   }
 }
@@ -204,6 +234,36 @@ select {
   .problem-message {
     color: #516372;
     font-size: 14px;
+  }
+
+  .admin-controls {
+    margin-top:10px;
+    .alert {
+      margin-bottom:0px;
+    }
+    .btn-group {
+      width:101%;
+      .admin-commentary {
+        border-radius: 5px 0px 0px 5px;
+        display      : inline-block;
+        float        : left;
+        width        : 70%;
+      }
+      .admin-type {
+        -webkit-appearance: none;
+        border-radius     : 0px;
+        display           : inline-block;
+        float             : left;height: 34px;
+        font-weight       : 500;
+        width             : 20%;
+      }
+      .admin-button {
+        width            : 9%;
+        display          : inline-block;
+        height           : 34px;
+        border-left-width: -1px;
+      }
+    }
   }
 }
 
@@ -224,3 +284,28 @@ select {
   .tooltip.top .tooltip-arrow {
     border-top-color: #cccccc;
   }
+
+
+// header
+#pad-wrapper {
+  .row .header {
+      background   : none;
+      box-shadow   : none;
+      display      : block;
+      height       : 34px;
+      margin-bottom: 20px;
+      padding      : 0px;
+  }
+}
+
+
+// error_explanation
+#error_explanation {
+  div {
+    ul {
+      padding-left: 52px;
+      text-align  : left;
+    }
+  }
+}
+
