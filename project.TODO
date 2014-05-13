@@ -17,7 +17,6 @@ ICRB Project:
         ☐ create news posted by admin on main page for all
         ☐ announcements (railscasts pro 103)
         ☐ replace in user model admin:boolean to role:int ?
-        ☐ move inline html styles to css
         ☐ users/edit profile split fileds and password, and add 2 buttons save
       --- ✄ -----------------------
 
@@ -40,6 +39,7 @@ ICRB Project:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ move inline html styles to css @done (14-05-13 17:32) @project(ICRB Project / Changes / bugs / refactor)
  ✔ exclude user login update @done (14-05-13 17:21) @project(ICRB Project / Changes / bugs / refactor)
  ✔ user can see only self problems (restrict url /users/id) @done (14-05-13 17:09) @project(ICRB Project / Changes / bugs / refactor)
  ✔ disable multiple submit @done (14-05-12 01:12) @project(ICRB Project / Changes / bugs / refactor)
@@ -47,9 +47,9 @@ Archive:
   http://stackoverflow.com/questions/6495141/rails-forms-after-click-disable-link
   http://getbootstrap.com/javascript/#buttons
  ✔ morris chart #statistics @done (14-05-12 00:34) @project(ICRB Project / Visual)
- ✔ flash. helper for add fa.icons @done (14-05-12 00:33) @project(ICRB Project / Visual)
  ✔ replace problem table with bootstrap/collapse @done (14-05-12 00:33) @project(ICRB Project / Changes / bugs / refactor)
  ✔ message symbols countdown (exclude asset from dev?) @done (14-05-12 00:33) @project(ICRB Project / Visual)
+ ✔ flash. helper for add fa.icons @done (14-05-12 00:33) @project(ICRB Project / Visual)
  ✔ display exact date on hover approx time @done (14-05-12 00:32) @project(ICRB Project / Changes / bugs / refactor)
  ✔ problem_table <tr> markup with div.row, not <span> @done (14-05-12 00:01) @project(ICRB Project / Changes / bugs / refactor)
  ✔ admin note for problems @done (14-05-12 00:00) @project(ICRB Project / 1st priority)
