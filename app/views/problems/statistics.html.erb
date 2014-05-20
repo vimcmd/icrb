@@ -1,9 +1,56 @@
 <% if current_user.admin? %>
   <% provide(:title, t(:stat)) %>
+
+  <!-- DUMMY -->
+  <div id="main-stats">
+      <div class="row stats-row">
+          <div class="col-md-3 col-sm-3 stat">
+              <div class="data">
+                  <span class="number">14</span>
+                  пользователей
+              </div>
+              <span class="date">за месяц</span>
+          </div>
+          <div class="col-md-3 col-sm-3 stat">
+              <div class="data">
+                  <span class="number">243</span>
+                  пользователей
+              </div>
+              <span class="date">всего</span>
+          </div>
+          <div class="col-md-3 col-sm-3 stat">
+              <div class="data">
+                  <span class="number">98</span>
+                  заявок
+              </div>
+              <span class="date">за месяц</span>
+          </div>
+          <div class="col-md-3 col-sm-3 stat last">
+              <div class="data">
+                  <span class="number">Оргтехника</span>
+                  самая частая заявка
+              </div>
+              <span class="date">за месяц</span>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
   <div id="pad-wrapper">
+  <div class="row">
     <!-- not efficient special for heroku,
     replace {chart: chart_test} with {chart: chart_data}  -->
-    <%= content_tag :div, "", id: "statistics", data: { chart: chart_heroku } %>
+    <div class="col-md-8">
+      <%= content_tag :div, "", id: "statistics", data: { chart: chart_heroku } %>
+    </div>
+    <div class="col-md-4">
+      <!-- DUMMY -->
+      <%= content_tag :div, "", id: "statistics-donut" %>
+    </div>
+  </div>
 
     <script type="text/coffeescript">
       jQuery ->
@@ -11,8 +58,17 @@
           element: "statistics"
           data: $('#statistics').data('chart')
           xkey: "created_at"
-          ykeys: ['users_registered', 'problems_total', 'problems_comleted']
-          labels: ['Новых пользователей', 'Заявок всего', 'Рассмотрено']
+          ykeys: ['problems_total', 'problems_comleted']
+          labels: ['Заявок всего', 'Рассмотрено']
+
+        Morris.Donut
+          element: "statistics-donut"
+          data: [
+            {label: "Не рассмотрено", value: 7},
+            {label: "Выполнено", value: 31},
+            {label: "Отказано", value: 8},
+            {label: "Ожидание", value: 12},
+          ]
     </script>
   </div>
 <% end %>

@@ -16,6 +16,7 @@ gem "jquery-rails", "~> 3.0.4"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
+  gem 'brakeman', :require => false
   gem 'sqlite3', '1.3.8'
   gem "better_errors", "~> 1.1.0"
   gem "annotate", "~> 2.6.1"

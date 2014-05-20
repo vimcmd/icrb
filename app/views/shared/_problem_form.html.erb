@@ -5,13 +5,12 @@
 <%= form_for(@problem) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <select name="problem_type_main" id="" class="ui-select" >
-    <option selected value="">Тип проблемы</option>
-    <option value=""></option>
+    <option value="">Тип проблемы</option>
+    <option selected value="">Оргтехника и комплектующие</option>
+    <option value="">Сеть / Интернет</option>
+    <option value="">Программное обеспечение</option>
   </select>
-  <select name="problem_type_sub" id="" class="ui-select pull-right" >
-    <option selected value="">уточните</option>
-    <option value=""></option>
-  </select>
+
 
   <%= f.text_area :content, placeholder: t(:problem_input), onkeyup: "countChar(this);" %>
 
@@ -24,7 +23,12 @@
 <br>
 <div class="alert alert-info">
   <i class="fa fa-lightbulb-o"></i>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, perferendis, repellat neque reprehenderit nobis recusandae ea sint qui consequuntur veniam ut sapiente vitae suscipit amet atque molestias tempora deserunt minima?
+  <strong>Краткие инструкции</strong>
+  <ul>
+    <li>При подаче заявки обязательно выбрать тип проблемы и вкратце дать описание</li>
+    <li>Заявку можно отменить, только если ее статус не изменился с момента подачи</li>
+    <li>Не забывайте отслеживать комментарии администратора к заявке</li>
+  </ul>
 </div>
 
 <script>
