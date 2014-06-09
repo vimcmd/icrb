@@ -7,6 +7,7 @@ ru:
   problem_admin: "Заявки"
   news: "Новости"
   users: "Пользователи"
+  regcode: "Рег.коды"
 
   # K_vrachu
   k_vrachu: "К врачу"

@@ -68,7 +68,10 @@ namespace :db do
       phone                = Faker::PhoneNumber.cell_phone
       Filial.create!(name:    name,
                      address: address,
-                     phone:   phone)
+                     phone:   phone,)
+      Filial.create!(name: "Поликлиника №1",
+                     address: "ул. Стахановская, 75",
+                     phone: "2-27-99",)
     end
   end
 

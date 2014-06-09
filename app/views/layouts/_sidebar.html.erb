@@ -44,12 +44,12 @@
             <%= link_to(t(:stat), problems_stat_path, class:"#{active_link(problems_stat_path)}" ) %>
           </li>
           <li>
-            <a href="#">Рег.коды</a>
+            <%= link_to(t(:regcode), regcode_path, class:"#{active_link(regcode_path)}" ) %>
           </li>
         </ul>
       <% end %>
     <% end %>
-    <% if signed_in? %>
+    <% if signed_in? && !current_user.admin? %>
       <!-- if signed_in? display links below
       -->
       <!--ПроМед
