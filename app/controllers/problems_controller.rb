@@ -1,11 +1,11 @@
 class ProblemsController < ApplicationController
   before_filter :signed_in_user
   before_filter :correct_user, only: :destroy
-  #before_filter :check_profile
+  # before_filter :check_profile
 
   def create
     begin
-      @current_user_problems = Problem.where("user_id = ?", current_user.id).paginate( page: params[:page], per_page: 10, )
+      @current_user_problems = Problem.where('user_id = ?', current_user.id).paginate(page: params[:page], per_page: 10)
       @problem = current_user.problems.build(params[:problem])
       if @problem.save
         flash[:success] = t(:problem_send)
@@ -37,11 +37,11 @@ class ProblemsController < ApplicationController
 
   def update
     @problem = Problem.find(params[:id])
-      if @problem.update_attributes(params[:problem])
-        redirect_to :back
-      else
-        redirect_to :back
-      end
+    if @problem.update_attributes(params[:problem])
+      redirect_to :back
+    else
+      redirect_to :back
+    end
   end
 
   def add
@@ -52,9 +52,9 @@ class ProblemsController < ApplicationController
         @feed_items = current_user.feed.paginate( page: params[:page], per_page: 10, )
       end
     else
-        redirect_to edit_user_path(current_user)
-        # redirect_to controller: 'users', action: 'edit', id: current_user.id
-        flash[:warning] = t( :user_profile_please_fill )
+      redirect_to edit_user_path(current_user)
+      # redirect_to controller: 'users', action: 'edit', id: current_user.id
+      flash[:warning] = t( :user_profile_please_fill )
     end
   end
 
