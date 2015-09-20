@@ -17,4 +17,4 @@
 /app/assets/images/img/*
 
 # Ignore IDE files
-/.idea
+.idea/
